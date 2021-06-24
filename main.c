@@ -29,6 +29,8 @@ int main (void)
 	 // ------------- %s ---------------
 	 char	*s = "WWWWWWWWWWWWW";
 	 printf("----%s-----\n", s);
+
+	 printf("[%s]\n", ft_change_base (999999, "1234567890abcdef", 16));
  
  return (1);
 }
