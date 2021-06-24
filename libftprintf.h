@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 10:11:44 by tomartin          #+#    #+#             */
-/*   Updated: 2021/06/23 10:30:35 by tomartin         ###   ########.fr       */
+/*   Created: 2021/06/23 10:21:01 by tomartin          #+#    #+#             */
+/*   Updated: 2021/06/23 10:24:33 by tomartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-int	ft_printf (const char *arg, ...)
-{
+# include <stdarg.h>
+# include <stdio.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <stddef.h>
 
-}
+ssize_t  ft_strlen(const char *str);
+
+#endif
