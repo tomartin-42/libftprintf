@@ -20,9 +20,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-ssize_t  ft_strlen(const char *str);
-char	*ft_change_base(long int num, char *code, int base);
-char	*ft_strjoin(char const *s1, char const s2);
-char	*ft_itoa (int n);
+ssize_t	ft_strlen(const char *str);
+int		ft_printf (const char *strg, ...);
 
 #endif

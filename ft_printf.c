@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-int	ft_printf (const char *arg, ...)
+int	ft_printf (const char *strg, ...)
 {
 
 }
