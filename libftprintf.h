@@ -19,8 +19,25 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdbool.h>
+
+typedef struct s_flags{
+    bool	alig;
+	bool	zero;
+	bool	point;
+	bool	pad;
+	bool	space;
+	bool	plus;
+    int		width;
+	int		len;
+
+}	t_flags;
 
 ssize_t	ft_strlen(const char *str);
 int		ft_printf (const char *strg, ...);
+void ft_init_flags (t_flags *flags);
+
+
+
 
 #endif
