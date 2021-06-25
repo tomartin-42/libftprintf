@@ -20,6 +20,7 @@ int	ft_printf (const char *pf_string, ...)
 	while (*pf_string)
 	{
 		if (*pf_string != '%')
+			ft_init_flags (&flags);
 			//viene el tomate;
 		else
 		{
