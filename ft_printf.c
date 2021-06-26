@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf (const char *pf_string, ...)
 {
@@ -25,7 +25,6 @@ int	ft_printf (const char *pf_string, ...)
 		if (*pf_string == '%')
 		{
 			ft_procesing (pf_string, &flags, &arg);
-			pf_string++;
 		}
 		else
 		{

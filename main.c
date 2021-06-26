@@ -1,23 +1,20 @@
-# include "libftprintf.h"
+# include "ft_printf.h"
 
 int main (void)
 {
-	t_flags	flags;
-
 	// -------------- %c --------------- 
 	char	 cr = 'o';
- 	printf ("AAA%-10cAAAAAA\n", cr);
+ 	printf ("AAA%10cAAAAAA\n", cr);
 
 	 // ------------- %s ---------------
 	 char	*s = "WWWWWWWWWWWWW";
 	 printf("----%s-----\n", s);
 
-	 ft_init_flags (&flags);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	 //flags.zero = true;
 	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	ft_printf("HOLA % ");
+	ft_printf("HOLA % 1234");
  
  return (1);
 }
