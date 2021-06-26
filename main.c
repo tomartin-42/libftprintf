@@ -1,25 +1,5 @@
 # include "libftprintf.h"
 
-void ft_arg(char *c, ...)
-{
-	va_list arg;
-	char	*w;
-
-	va_start (arg, c);
-	while (*c)
-	{
-		if (*c == '%')
-			{
-				w = va_arg (arg, char *);
-				write (1, w, ft_strlen(w));
-			}	
-		else
-			write (1, c, 1);
-		c++;
-	}
-	va_end (arg);
-}
-
 int main (void)
 {
 	t_flags	flags;
@@ -34,10 +14,10 @@ int main (void)
 
 	 ft_init_flags (&flags);
 
-	 printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	 flags.zero = true;
-	 printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	
+	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
+	 //flags.zero = true;
+	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
+	ft_printf("HOLA % ");
  
  return (1);
 }

@@ -15,17 +15,24 @@
 int	ft_printf (const char *pf_string, ...)
 {
 	va_list arg;
-	t_list	flags;
+	t_flags	flags;
 
+	flags.len = 0;			
+	ft_init_flags (&flags);
+	va_start (arg, pf_string);
 	while (*pf_string)
 	{
-		if (*pf_string != '%')
-			ft_init_flags (&flags);
-			//viene el tomate;
+		if (*pf_string == '%')
+		{
+			ft_procesing (pf_string, &flags, &arg);
+			pf_string++;
+		}
 		else
 		{
 			write (1, pf_string, 1);
-			falgs.len++;
+			flags.len += 1;
 		}
+		pf_string++;
 	}
+	va_end (arg);
 }

@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-typedef struct s_flags{
+typedef struct s_flag{
     bool	alig;
 	bool	zero;
 	bool	point;
@@ -30,13 +30,14 @@ typedef struct s_flags{
 	bool	plus;
     int		width;
 	int		len;
+	char	*f_str;
 
 }	t_flags;
 
 ssize_t	ft_strlen(const char *str);
 int		ft_printf (const char *strg, ...);
 void ft_init_flags (t_flags *flags);
-
+void ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg);
 
 
 
