@@ -10,4 +10,6 @@ void ft_init_flags (t_flags *flags)
 	flags->space = false;
 	flags->plus = false;
 	flags->len = 0;
+	flags->width = 0;
+	flags->f_str = NULL;
 }

@@ -34,4 +34,5 @@ int	ft_printf (const char *pf_string, ...)
 		pf_string++;
 	}
 	va_end (arg);
+	return (flags.len);
 }
