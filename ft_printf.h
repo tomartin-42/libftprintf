@@ -24,8 +24,9 @@
 typedef struct s_flag{
 	char	*f_str;
 	int		len;
-    int		width;
-    bool	alig;
+	int		width;
+	int		precision;
+	bool	alig;
 	bool	zero;
 	bool	point;
 	bool	pad;
@@ -38,21 +39,19 @@ typedef struct s_flag{
 
 ssize_t	ft_strlen(const char *str);
 int		ft_printf (const char *strg, ...);
-void 	ft_init_flags (t_flags *flags);
-void 	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg);
-void 	ft_get_flags (const char *string, t_flags *flags);
+void	ft_init_flags (t_flags *flags);
+void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg);
+void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
-int		ft_get_whidt (const char *string, int *offset);
+int		ft_get_whidt (const char *string, int *offset, va_list *pf_arg);
+int		ft_get_precision (const char *string, int *offset, va_list *pf_arg);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_stradd_char(char const *s1, char c2);
 
-
-
 // BORRAR ---------------------------
-void imprimeflags (t_flags *flags);
+void	imprimeflags (t_flags *flags);
 //BORRAR -----------------------------
-
 #endif
