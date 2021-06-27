@@ -43,7 +43,7 @@ void 	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg);
 void 	ft_get_flags (const char *string, t_flags *flags);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
-int		ft_get_whidt (const char *string);
+int		ft_get_whidt (const char *string, int *offset);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);

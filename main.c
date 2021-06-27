@@ -10,6 +10,11 @@ int main (void)
 	 char	*s = "WWWWWWWW";
 	 printf("--%-10.3s--\n", s);
 
+	 // ------------- %f ---------------
+	 float	f = 123.45678;
+	 int	n1 = 9;
+	 int	n2 = 3;
+	 printf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	 //flags.zero = true;
