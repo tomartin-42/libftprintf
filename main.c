@@ -19,7 +19,8 @@ int main (void)
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	 //flags.zero = true;
 	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	ft_printf("HOLA %0*.*eec 1234", n1, n2);
+	char	c = 'X';
+	ft_printf("HOLA %5c 1234", c);
  
  return (1);
 }

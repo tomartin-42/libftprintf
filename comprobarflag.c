@@ -1,4 +1,4 @@
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 void imprimeflags (t_flags *flags)
 {
