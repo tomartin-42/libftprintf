@@ -22,18 +22,18 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		else if (ft_strchr("123456789*", *string))
 		{
 			flags->width = ft_get_whidt (string, &offset, pf_arg);
-			string = string + offset;
+			string = string + offset - 1;
 		}
 		else if (*string == '.')
 		{
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
-			string = string + offset;
+			string = string + offset - 1;
 		}
 		 string++;
 	}
 	ft_write_type (string, flags, pf_arg);
-	//imprimeflags (flags);
+
 }
 
 // this fuction get the number of whidt and add the value
@@ -89,7 +89,9 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
 	if (*pf_string == 'c')
+	{
 		ft_print_c (flags, pf_arg);
+	}
  	else if (*pf_string == 's')
  		flags->type = 's';
  	else if (*pf_string == 'p')

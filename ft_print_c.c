@@ -12,7 +12,7 @@ void	ft_print_c (t_flags *flags, va_list *pf_arg)
 		to_print = malloc (1);
 	if (flags->zero == true && flags->alig == false)
 		ft_make_string_zero (to_print, flags->width);
-	if (flags->alig == true)
+	if (flags->alig == false)
 	{
 		ft_make_string_space (to_print, flags->width);
 		to_print[0] = c;
