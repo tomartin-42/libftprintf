@@ -12,5 +12,6 @@ void	ft_init_flags (t_flags *flags)
 	flags->len = 0;
 	flags->width = 0;
 	flags->precision = 0;
+	flags->type = '0';
 	flags->f_str = NULL;
 }

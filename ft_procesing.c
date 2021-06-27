@@ -32,6 +32,7 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		}
 		 string++;
 	}
+	ft_get_type (string, flags, pf_arg);
 	imprimeflags (flags);
 }
 
@@ -71,7 +72,6 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 	s_precision = ft_strdup ("");
 	while (ft_isdigit (*string) || *string == '*')
 	{
-		printf ("----HOLA----\n");
 		if (*string == '*')
 		{
 			(*offset) = 1;
@@ -84,4 +84,9 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 	answ = ft_atoi (s_precision);
 	free (s_precision);
 	return (answ);
+}
+
+void ft_get_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
+{
+	printf ("[[[%s]]]\n",pf_string);
 }
