@@ -28,11 +28,26 @@ int	ft_printf (const char *pf_string, ...)
 		}
 		else
 		{
-			write (1, pf_string, 1);
-			flags.len += 1;
+			ft_skip (pf_string, &flags);
 		}
 		pf_string++;
 	}
 	va_end (arg);
 	return (flags.len);
+}
+
+int	ft_skip (char *string, t_flags *flags)
+{
+
+	if (ft_strchr ("%", *string))
+	{
+		string++;
+		while (ft_strchr ("1234567890*-.", *string))
+			string++;
+		if (ft_strchr ("cspdiuxX", *string))
+			string++;
+	}
+	write (1, string, 1);
+	flags->len += 1;
+	return (flags->len);
 }
