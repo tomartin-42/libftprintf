@@ -16,7 +16,6 @@ void	ft_make_string_space (char *string)
 	i = 0;
 	while (string[i] != '\0')
 	{
-		printf ("OOOOOO\n");
 		string[i++] = ' ';
 	}
 }

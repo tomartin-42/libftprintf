@@ -2,6 +2,7 @@
 
 void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
+	ft_init_flags (flags);
 	ft_get_flags (pf_string, flags, pf_arg);
 }
 
@@ -19,16 +20,16 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		}
 		else if (*string == '0')
 			flags->zero = true;
-		else if (ft_strchr("123456789*", *string))
+		else if (ft_strchr("123456789*", *string) && flags->point == false)
 		{
 			flags->width = ft_get_whidt (string, &offset, pf_arg);
-			string = string + offset - 1;
+			string = string + offset;
 		}
 		else if (*string == '.')
 		{
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
-			string = string + offset - 1;
+			string = string + offset;
 		}
 		 string++;
 	}

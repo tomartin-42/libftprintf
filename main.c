@@ -20,7 +20,9 @@ int main (void)
 	 //flags.zero = true;
 	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	char	c = 'X';
-	ft_printf("HOLA%5c1234", c);
+	printf ("%0*c34\n", n2, c);
+	ft_printf("%0*c34\n", n2, c);
+
  
  return (1);
 }
