@@ -19,9 +19,9 @@ int main (void)
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	 //flags.zero = true;
 	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	char	c = 'X';
-	printf ("%0*c34\n", n2, c);
-	ft_printf("%0*c34\n", n2, c);
+	char	c = 'O';
+	printf ("XX%0*cXX%*c\n", n2, c, n1, c);
+	ft_printf("XX%0*cXX%*c\n", n2, c, n1, c);
 
  
  return (1);
