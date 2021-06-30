@@ -23,8 +23,8 @@ int main (void)
 	// printf ("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	// ft_printf("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	char *str = "ABCDEF";
-	printf ("XX%sXX\n", str);
-	ft_printf ("XX%sXX\n", str);
+	printf ("XX%10.4sXX\n", str);
+	ft_printf ("XX%10.4sXX\n", str);
 
  return (1);
 }
