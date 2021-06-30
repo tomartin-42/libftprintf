@@ -16,7 +16,6 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		if (*string == '-')
 		{
 			flags->alig = true;
-
 		}
 		else if (ft_strchr("123456789*", *string) && flags->point == false)
 		{
@@ -30,7 +29,6 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		{
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
-			printf ("[[[%d]]]\n", flags->precision);
 		}
 		string++;
 	}
@@ -44,7 +42,6 @@ int	ft_get_whidt (const char *string, int *offset, va_list *pf_arg)
 	char	*s_whidt;
 	int		answ;
 
-	//*offset = 0;
 	if (*string == '*')
 	{
 		answ = va_arg (*pf_arg, int);
@@ -59,7 +56,6 @@ int	ft_get_whidt (const char *string, int *offset, va_list *pf_arg)
 	{
 		s_whidt = ft_stradd_char (s_whidt, *string);
 		string++;
-		//(*offset)++;
 	}
 	answ = ft_atoi (s_whidt);
 	free (s_whidt);
@@ -73,7 +69,6 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 	char	*s_precision;
 	int		answ;
 
-	(*offset) = 0;
 	answ = 0;
 	string++;
 	s_precision = ft_strdup ("");
@@ -81,12 +76,14 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 	{
 		if (*string == '*')
 		{
-			(*offset) = 1;
-			return (va_arg (*pf_arg, int));
+			answ = va_arg (*pf_arg, int);
+			if (answ < 0)
+				return (answ * -1);
+			else 
+				return (answ);
 		}
 		s_precision = ft_stradd_char (s_precision, *string);
 		string++;
-		(*offset)++;
 	}
 	answ = ft_atoi (s_precision);
 	free (s_precision);
@@ -96,9 +93,7 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
 	if (*pf_string == 'c')
-	{
 		ft_print_c (flags, pf_arg);
-	}
  	else if (*pf_string == 's')
  		flags->type = 's';
  	else if (*pf_string == 'p')

@@ -53,7 +53,7 @@ char	*ft_strjoin (char const *s1, char const *s2);
 char	*ft_stradd_char (char const *s1, char c2);
 void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg);
 
-void	ft_print_c (t_flags *flags, va_list *pf_arg);
+void	ft_print_c (t_flags *flg, va_list *pf_arg);
 
 void	ft_make_string_zero (int num);
 void	ft_make_string_space (int num);

@@ -17,15 +17,14 @@ int main (void)
 	 printf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	 //flags.zero = true;
-	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	char	c = 'O';
-	printf ("XX%--cXX%3.*c--%03c\n", c, n1, c, c);
-	ft_printf("XX%--cXX%3.*c--%03c\n", c, n1, c, c);
-	//printf ("%03c\n", c);
-	//ft_printf("%03c\n", c);
+	//flags.zero = true;
+	//printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
+	// char	c = 'O';
+	// printf ("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
+	// ft_printf("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
+	char *str = "ABCDEF";
+	printf ("XX%sXX\n", str);
+	ft_printf ("XX%sXX\n", str);
 
-
- 
  return (1);
 }
