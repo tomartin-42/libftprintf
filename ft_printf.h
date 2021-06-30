@@ -54,9 +54,10 @@ char	*ft_stradd_char (char const *s1, char c2);
 void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg);
 
 void	ft_print_c (t_flags *flg, va_list *pf_arg);
+void	ft_print_s (t_flags *flg, va_list *pf_arg);
 
-void	ft_make_string_zero (int num);
-void	ft_make_string_space (int num);
+void	ft_make_string_zero (int num, int *len);
+void	ft_make_string_space (int num, int *len);
 int		ft_to_write (char *to_print, int leng, t_flags *flags);
 
 int		ft_skip (const char *pf_string, t_flags *flags);

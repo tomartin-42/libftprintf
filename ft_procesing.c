@@ -95,7 +95,7 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 	if (*pf_string == 'c')
 		ft_print_c (flags, pf_arg);
  	else if (*pf_string == 's')
- 		flags->type = 's';
+ 		ft_print_s (flags, pf_arg);
  	else if (*pf_string == 'p')
  		flags->type = 'p';
  	else if (*pf_string == 'd')

@@ -8,14 +8,14 @@ void	ft_print_c (t_flags *flg, va_list *pf_arg)
 	if (flg->width < 1 || flg->alig == true || flg->point == false)
 		write (1, &c, 1);
 	if (flg->alig == false && flg->width > 0 && flg->zero == false)
-			ft_make_string_space (flg->width);
+			ft_make_string_space (flg->width, flg->len);
 	else if (flg->zero == true && flg->alig == false && flg->width > 0)
 	{
-		ft_make_string_zero (flg->width);
+		ft_make_string_zero (flg->width, flg->len);
 		write (1, &c, 1);
 	}
 	else if (flg->alig == true && flg->width > 0)
-		ft_make_string_space (flg->width);
+		ft_make_string_space (flg->width, flg->len);
 }
 
 // void	ft_print_c (t_flags *flg, va_list *pf_arg)
