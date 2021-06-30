@@ -16,25 +16,25 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 		if (*string == '-')
 		{
 			flags->alig = true;
-			flags->zero = false;
+
 		}
-		else if (*string == '0')
-			flags->zero = true;
 		else if (ft_strchr("123456789*", *string) && flags->point == false)
 		{
 			flags->width = ft_get_whidt (string, &offset, pf_arg);
-			string = string + offset;
+		}
+		else if (*string == '0')
+		{
+			flags->zero = true;
 		}
 		else if (*string == '.')
 		{
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
-			string = string + offset;
+			printf ("[[[%d]]]\n", flags->precision);
 		}
-		 string++;
+		string++;
 	}
 	ft_write_type (string, flags, pf_arg);
-
 }
 
 // this fuction get the number of whidt and add the value
@@ -44,16 +44,22 @@ int	ft_get_whidt (const char *string, int *offset, va_list *pf_arg)
 	char	*s_whidt;
 	int		answ;
 
-	(*offset) = 0;
+	//*offset = 0;
 	if (*string == '*')
-		return (va_arg (*pf_arg, int));
+	{
+		answ = va_arg (*pf_arg, int);
+		if (answ < 0)
+			return (answ * -1);
+		else 
+			return (answ);
+	}
 	answ = 0;
 	s_whidt = ft_strdup ("");
 	while (ft_isdigit (*string))
 	{
 		s_whidt = ft_stradd_char (s_whidt, *string);
 		string++;
-		(*offset)++;
+		//(*offset)++;
 	}
 	answ = ft_atoi (s_whidt);
 	free (s_whidt);

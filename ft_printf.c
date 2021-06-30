@@ -28,8 +28,7 @@ int	ft_printf (const char *pf_string, ...)
 		}
 		else
 		{
-			write (1, pf_string, 1);
-			flags.len += 1;
+			write (1, pf_string, 1);			flags.len += 1;
 		}
 		pf_string++;
 	}

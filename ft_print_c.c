@@ -3,33 +3,28 @@
 void	ft_print_c (t_flags *flags, va_list *pf_arg)
 {
 	char	c;
-	char	*to_print;
+	imprimeflags (flags);
 	c = va_arg (*pf_arg, int);
-	if (flags->width > 0)
+	if (flags->width < 1)
 	{
-		*to_print =(char *) malloc (sizeof (char) * flags->width);
+		write (1, &c, 1);
 	}
-	else
+	else if (flags->alig == false && flags->width > 0 && flags->zero == false)
 	{
-		*to_print =(char *) malloc (sizeof (char) * 1);
+		write (1, &c, 1);
+		ft_make_string_space (flags->width);
 	}
-	to_print[flags->width] = '\0';
-	if (flags->alig == false)
+	else if (flags->zero == true && flags->alig == false && flags->width > 0)			
 	{
-		ft_make_string_space (to_print);
+		ft_make_string_zero (flags->width);
+		write (1, &c, 1);
 	}
-	if (flags->zero == true && flags->alig == false)			
+	else if (flags->alig == true && flags->width > 0)
 	{
-		ft_make_string_zero (to_print);
+		write (1, &c, 1);
+		ft_make_string_space (flags->width);
 	}
-	if (flags->alig == false && flags->width > 0)
+	else if (flags->alig == true || flags->width <= 0)
 	{
-		to_print[flags->width - 1] = c;
 	}
-	if (flags->alig == true || flags->width <= 0)
-	{
-		to_print[0] = c;
-	}
-	ft_to_write (to_print, flags->width, flags);
-	//free (to_print);
 }

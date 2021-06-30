@@ -1,22 +1,22 @@
 #include "ft_printf.h"
 
-void	ft_make_string_zero (char *string)
+void	ft_make_string_zero (int num)
 {
-	int	i;
-
-	i = 0;
-	while (string[i] != '\0')
-		string[i++] = '0';
+	if (num < 0)
+		num = num * -1;
+	while (num-- > 1)
+	{
+		write (1, "0", 1);
+	}
 }
 
-void	ft_make_string_space (char *string)
+void	ft_make_string_space (int num)
 {
-	int	i;
-
-	i = 0;
-	while (string[i] != '\0')
+	if (num < 0)
+		num = num * -1;
+	while (num-- > 1)
 	{
-		string[i++] = ' ';
+		write (1, " ", 1);
 	}
 }
 

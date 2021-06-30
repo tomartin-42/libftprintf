@@ -12,16 +12,19 @@ int main (void)
 
 	 // ------------- %f ---------------
 	 float	f = 123.45678;
-	 int	n1 = 9;
-	 int	n2 = 3;
+	 int	n1 = -9;
+	 int	n2 = -3;
 	 printf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	 //flags.zero = true;
 	 //printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	char	c = 'O';
-	printf ("XX%0*cXX%*c\n", n2, c, n1, c);
-	ft_printf("XX%0*cXX%*c\n", n2, c, n1, c);
+	printf ("XX%--cXX%3.*c--%03c\n", c, n1, c, c);
+	ft_printf("XX%--cXX%3.*c--%03c\n", c, n1, c, c);
+	//printf ("%03c\n", c);
+	//ft_printf("%03c\n", c);
+
 
  
  return (1);
