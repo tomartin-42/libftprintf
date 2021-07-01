@@ -27,7 +27,6 @@ int		ft_to_write (char *to_print, int leng, t_flags *flags)
 	int	i;
 	i = 0;
 
-	printf ("[[[%d]]]\n", leng);
 	while (i <= leng)
 	{
 		write (1, &to_print[i], 1);
