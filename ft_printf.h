@@ -55,6 +55,7 @@ void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg);
 
 void	ft_print_c (t_flags *flg, va_list *pf_arg);
 void	ft_print_s (t_flags *flg, va_list *pf_arg);
+void	ft_print_p (t_flags *flg, va_list *pf_arg);
 
 void	ft_make_string_zero (int num, int *len, char c);
 //void	ft_make_string_space (int num, int *len);
