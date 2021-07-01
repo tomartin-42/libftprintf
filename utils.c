@@ -130,3 +130,18 @@ char	*ft_stradd_char(char const *s1, char c2)
 	p[j] = '\0';
 	return (p);
 }
+
+long int ft_dec_to_hex(long int num)
+{
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	if (num > 16)
+	{
+		ft_dec_to_hex(num / 16);
+		ft_dec_to_hex(num % 16);
+	}
+	else
+		write (1, &hex[num], 1);
+
+}
