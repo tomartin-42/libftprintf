@@ -19,12 +19,12 @@ int main (void)
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	//flags.zero = true;
 	//printf ("%d %d %d %d %d %d %d\n", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
-	// char	c = 'O';
+	 char	c = 'O';
 	// printf ("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	// ft_printf("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	char *str = "ABCDEF";
-	printf ("XX%10.4sXX\n", str);
-	ft_printf ("XX%10.4sXX\n", str);
+	printf ("XX%10.2sXX%04.0cXX\n", str, c);
+	ft_printf ("XX%10.2sXX%04.0cXX\n", str, c);
 
  return (1);
 }

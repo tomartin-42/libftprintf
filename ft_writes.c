@@ -1,26 +1,26 @@
 #include "ft_printf.h"
 
-void	ft_make_string_zero (int num, int *len)
+void	ft_make_string_zero (int num, int *len, char c)
 {
 	if (num < 0)
 		num = num * -1;
 	while (num-- > 1)
 	{
-		write (1, "0", 1);
+		write (1, &c, 1);
 		len++;
 	}
 }
 
-void	ft_make_string_space (int num, int *len)
-{
-	if (num < 0)
-		num = num * -1;
-	while (num-- > 1)
-	{
-		write (1, " ", 1);
-		len++;
-	}
-}
+// void	ft_make_string_space (int num, int *len)
+// {
+// 	if (num < 0)
+// 		num = num * -1;
+// 	while (num-- > 1)
+// 	{
+// 		write (1, " ", 1);
+// 		len++;
+// 	}
+// }
 
 int		ft_to_write (char *to_print, int leng, t_flags *flags)
 {

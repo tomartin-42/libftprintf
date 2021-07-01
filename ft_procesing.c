@@ -9,28 +9,26 @@ void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 // this function get the flags and save in the struct
 void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 {
-	int	offset;
+	int		offset;
+	bool	check;
 
+	check = false;
+	string++;
 	while (!ft_strchr ("cspdiuxX", *string))
 	{
 		if (*string == '-')
-		{
 			flags->alig = true;
-		}
 		else if (ft_strchr("123456789*", *string) && flags->point == false)
-		{
 			flags->width = ft_get_whidt (string, &offset, pf_arg);
-		}
-		else if (*string == '0')
-		{
+		else if (*string == '0' && check == false)
 			flags->zero = true;
-		}
 		else if (*string == '.')
 		{
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
 		}
 		string++;
+		check = true;
 	}
 	ft_write_type (string, flags, pf_arg);
 }

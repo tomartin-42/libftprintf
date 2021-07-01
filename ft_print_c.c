@@ -1,51 +1,59 @@
 #include "ft_printf.h"
 
-void	ft_print_c (t_flags *flg, va_list *pf_arg)
+static void ft_print_c_unalig (t_flags *flg, va_list *pf_arg, char c)
 {
-	char	c;
+	char			x;
+	unsigned int	add;
 
-	c = va_arg (*pf_arg, int);
-	if (flg->width < 1 || flg->alig == true || flg->point == false)
-		write (1, &c, 1);
-	if (flg->alig == false && flg->width > 0 && flg->zero == false)
-			ft_make_string_space (flg->width, flg->len);
-	else if (flg->zero == true && flg->alig == false && flg->width > 0)
+	add = 0;
+	x = va_arg (*pf_arg, int);
+	if (flg->precision >= 1)
+		flg->precision = 0;
+	add = flg->width;
+	if (flg->precision > 0)
 	{
-		ft_make_string_zero (flg->width, flg->len);
-		write (1, &c, 1);
+		ft_make_string_zero (flg->width - flg->precision + 1, &flg->len, c);
+		ft_to_write (&x, flg->precision - 1, flg);
 	}
-	else if (flg->alig == true && flg->width > 0)
-		ft_make_string_space (flg->width, flg->len);
+	else
+	{
+		ft_make_string_zero (add, &flg->len, c);
+		ft_to_write (&x, 0, flg);
+	}
 }
 
-// void	ft_print_c (t_flags *flg, va_list *pf_arg)
-// {
-// 	char	c;
+static void ft_print_c_alig (t_flags *flg, va_list *pf_arg, char c)
+{
+	char			x;
+	unsigned int	add;
 
-// 	c = va_arg (*pf_arg, int);
-// 	if (flg->width < 1 || flg->alig == true || flg->point == false)
-// 		write (1, &c, 1);
-// 	if (flg->alig == false && flg->width > 0 && flg->zero == false)
-// 	{
-// 		//if (flg->point == false)
-// 		//{	
-// 			//write (1, &c, 1);
-// 			ft_make_string_space (flg->width);
-// 		//}
-// 		//else
-// 		//{
-// 		//	ft_make_string_space (flg->width);
-// 		//	write (1, &c, 1);
-// 		//}
-// 	}
-// 	else if (flg->zero == true && flg->alig == false && flg->width > 0)
-// 	{
-// 		ft_make_string_zero (flg->width);
-// 		write (1, &c, 1);
-// 	}
-// 	else if (flg->alig == true && flg->width > 0)
-// 	{
-// 		//write (1, &c, 1);
-// 		ft_make_string_space (flg->width);
-// 	}
-// }
+	add = 0;
+	x = va_arg (*pf_arg, int);
+	if (flg->precision >= 1)
+		flg->precision = 0;
+	add = flg->width;
+	if (flg->precision > 0)
+	{
+		ft_to_write (&x, flg->precision - 1, flg);
+		ft_make_string_zero (flg->width - flg->precision + 1, &flg->len, c);
+	}
+	else
+	{
+		ft_to_write (&x, 0, flg);
+		ft_make_string_zero (add, &flg->len, c);
+	}
+}
+
+void ft_print_c (t_flags *flg, va_list *pf_arg)
+{
+	char	c;
+	
+	if (flg->zero == true)
+		c = '0';
+	else if (flg->zero == false)
+		c = ' ';	
+	if (flg->alig == false)
+		ft_print_c_unalig (flg, pf_arg, c);
+	else if (flg->alig == true)
+		ft_print_c_alig (flg, pf_arg, c);
+}
