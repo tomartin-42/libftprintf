@@ -13,6 +13,7 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 	bool	check;
 
 	check = false;
+	offset = 0;
 	string++;
 	while (!ft_strchr ("cspdiuxX", *string))
 	{
@@ -27,9 +28,10 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 			flags->point = true;
 			flags->precision = ft_get_precision (string, &offset, pf_arg);
 		}
-		string++;
+		string = string + offset;
 		check = true;
 	}
+	imprimeflags (flags);
 	ft_write_type (string, flags, pf_arg);
 }
 
@@ -37,26 +39,27 @@ void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
 // at flags_struct
 int	ft_get_whidt (const char *string, int *offset, va_list *pf_arg)
 {
-	char	*s_whidt;
+	char	*s_precision;
 	int		answ;
 
-	if (*string == '*')
-	{
-		answ = va_arg (*pf_arg, int);
-		if (answ < 0)
-			return (answ * -1);
-		else 
-			return (answ);
-	}
 	answ = 0;
-	s_whidt = ft_strdup ("");
-	while (ft_isdigit (*string))
+	s_precision = ft_strdup ("");
+	while (ft_isdigit (*string) || *string == '*')
 	{
-		s_whidt = ft_stradd_char (s_whidt, *string);
+		if (*string == '*')
+		{
+			answ = va_arg (*pf_arg, int);
+			if (answ < 0)
+				return (answ * -1);
+			else 
+				return (answ);
+		}
+		s_precision = ft_stradd_char (s_precision, *string);
 		string++;
+		*offset += 1;
 	}
-	answ = ft_atoi (s_whidt);
-	free (s_whidt);
+	answ = ft_atoi (s_precision);
+	free (s_precision);
 	return (answ);
 }
 
@@ -82,6 +85,7 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 		}
 		s_precision = ft_stradd_char (s_precision, *string);
 		string++;
+		*offset += 1;
 	}
 	answ = ft_atoi (s_precision);
 	free (s_precision);
