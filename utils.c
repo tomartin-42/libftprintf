@@ -131,17 +131,43 @@ char	*ft_stradd_char(char const *s1, char c2)
 	return (p);
 }
 
-long int ft_dec_to_hex(long int num)
+void ft_dec_to_hex(long int num, char *code, int base, t_flags *flg)
 {
-	char	*hex;
-
-	hex = "0123456789abcdef";
-	if (num > 16)
+	char	*answ;
+	
+	if (num > base)
 	{
-		ft_dec_to_hex(num / 16);
-		ft_dec_to_hex(num % 16);
+		ft_dec_to_hex(num / base, code, base, flg);
+		ft_dec_to_hex(num % base, code, base, flg);
+
 	}
 	else
-		write (1, &hex[num], 1);
+	{
+		flg->f_str = ft_stradd_char_empy(flg->f_str, code[num]);
+	}
 
+}
+
+char	*ft_stradd_char_empy(char const *s1, char c2)
+{
+	int		i;
+	int		j;
+	char	*p;
+
+	if (!s1 || !c2)
+	s1 = ft_strdup ("");
+	i = ft_strlen(s1) + 1;
+	p = malloc(i + 1);
+	if (!p)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[j] != '\0')
+	{
+		p[j] = s1[j];
+		j++;
+	}
+		p[j++] = c2;
+	p[j] = '\0';
+	return (p);
 }
