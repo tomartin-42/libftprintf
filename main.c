@@ -27,8 +27,8 @@ int main (void)
 	//ft_printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	char *j;
 	j = &c;
-	printf ("XX%22.15sXX\n", str);
-	ft_printf ("XX%22.15sXX\n", str);
+	printf ("XX%-23.12sXX\n", str);
+	ft_printf ("XX%-23.12sXX\n", str);
 
  return (1);
 }
