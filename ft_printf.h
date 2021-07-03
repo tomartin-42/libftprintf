@@ -42,6 +42,7 @@ ssize_t	ft_strlen (const char *str);
 int		ft_printf (const char *strg, ...);
 void	ft_init_flags (t_flags *flags);
 void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg);
+int		ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg);
 void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg);
 char	*ft_strchr (const char *s, int c);
 char	*ft_strdup (const char *s);

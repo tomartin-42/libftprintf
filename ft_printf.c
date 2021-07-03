@@ -57,3 +57,21 @@ int	ft_skip (const char *string, t_flags *flags)
 	}
 	return (offset);
 }
+
+void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
+{
+	ft_init_flags (flags);
+	ft_get_flags (pf_string, flags, pf_arg);
+}
+
+void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
+{
+	if (*pf_string == 'c')
+		ft_print_c (flags, pf_arg);
+ 	else if (*pf_string == 's')
+ 		ft_print_s (flags, pf_arg);
+ 	else if (*pf_string == 'p')
+		 ft_print_p (flags, pf_arg);
+ 	else if (*pf_string == 'd')
+ 		flags->type = 'd';
+}
