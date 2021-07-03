@@ -10,6 +10,7 @@ void imprimeflags (t_flags *flags)
 	printf("space = %d\n", flags->space);
 	printf("plus = %d\n", flags->plus);
 	printf("width = %d\n", flags->width);
+	printf("bwidth = %d\n", flags->bwidth);
 	printf("precision = %d\n", flags->precision);
 	printf("len = %d\n", flags->len);
 	printf("str = %s\n", flags->f_str);	

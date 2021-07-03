@@ -27,6 +27,7 @@ typedef struct s_flag{
 	int		width;
 	int		precision;
 	char	type;
+	bool	bwidth;
 	bool	alig;
 	bool	zero;
 	bool	point;
@@ -46,8 +47,11 @@ int		ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg);
 void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg);
 char	*ft_strchr (const char *s, int c);
 char	*ft_strdup (const char *s);
-int		ft_get_whidt (const char *string, int *offset, va_list *pf_arg);
-int		ft_get_precision (const char *string, int *offset, va_list *pf_arg);
+int		ft_get_whidt (const char *string, int *offset, va_list *pf_arg, t_flags *flg);
+int		ft_get_precision (const char *string, int *offset, va_list *pf_arg, t_flags *flg);
+int		ft_getx_whidt (va_list *pf_arg, t_flags *flg);
+int		ft_getx_precision (va_list *pf_arg, t_flags *flg);
+
 int		ft_isdigit (int c);
 int		ft_atoi (const char *str);
 char	*ft_strjoin (char const *s1, char const *s2);

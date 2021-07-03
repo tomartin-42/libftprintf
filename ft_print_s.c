@@ -3,55 +3,51 @@
 static void ft_print_s_unalig (t_flags *flg, va_list *pf_arg, char c)
 {
 	char	*str;
-	int	    add;
+	int	    nc_str;
+	int		nc_width;
 
-	add = 0;
 	str = va_arg (*pf_arg, char *);
-    add = flg->width - (ft_strlen (str) - 1);
-	if (flg->precision == 0)
-		str = ft_strdup ("");
-    if (add < 0)
-        add = 0;
-    if (flg->alig == false)
-    {
-		ft_make_string_zero (add, &flg->len, c);
-		ft_to_write (str, ft_strlen (str) - 1 , flg);
-    }
-    else
-    {
-        ft_make_string_zero (add, &flg->len, c);
-        ft_to_write (str, ft_strlen (str) - 1 , flg);
-    }
+	nc_str = ft_strlen (str);
+	if (flg->point == true)
+	{
+		if (flg->precision == 0)
+			nc_str = 0;
+		else if (flg->precision < ft_strlen (str))
+			nc_str = flg->precision;
+		else if (flg->precision >= ft_strlen (str))
+			nc_str = ft_strlen (str);
+	}
+	nc_width = flg->width - (nc_str - 1);
+	ft_make_string_zero (nc_width, &flg->len, c);
+	ft_to_write (str, nc_str , flg);
 }
 
 static void ft_print_s_alig (t_flags *flg, va_list *pf_arg, char c)
 {
 	char	*str;
-	int	    add;
+	int	    nc_str;
+	int		nc_width;
 
-	add = 0;
 	str = va_arg (*pf_arg, char *);
-    add = flg->width - (ft_strlen (str) - 1);
-	if (flg->precision == 0)
-		str = ft_strdup ("");
-    if (add < 0)
-        add = 0;
-    if (flg->alig == true)
-    {
-		ft_to_write (str, ft_strlen (str) - 1 , flg);
-		ft_make_string_zero (add, &flg->len, c);
-    }
-    else
-    {
-        ft_to_write (str, ft_strlen (str) - 1 , flg);
-        ft_make_string_zero (add, &flg->len, c);
-    }
+	nc_str = ft_strlen (str);
+	if (flg->point == true)
+	{
+		if (flg->precision == 0)
+			nc_str = 0;
+		else if (flg->precision < ft_strlen (str))
+			nc_str = flg->precision;
+		else if (flg->precision >= ft_strlen (str))
+			nc_str = ft_strlen (str);
+	}
+	nc_width = flg->width - (nc_str - 1);
+	ft_to_write (str, nc_str , flg);
+	ft_make_string_zero (nc_width, &flg->len, c);
 }
 
 void ft_print_s (t_flags *flg, va_list *pf_arg)
 {
 	char	c;
-
+	//imprimeflags (flg);
 	c = ' ';
 	if (flg->alig == false && flg->zero == true)
 		c = '0';

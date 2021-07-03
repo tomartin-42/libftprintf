@@ -12,8 +12,8 @@ int main (void)
 
 	 // ------------- %f ---------------
 	 float	f = 123.45678;
-	 int	n1 = -9;
-	 int	n2 = -3;
+	 int	n1 = 9;
+	 int	n2 = 12;
 	 printf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
@@ -27,8 +27,8 @@ int main (void)
 	//ft_printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	char *j;
 	j = &c;
-	printf ("XX%-023.12sXX\n", str);
-	ft_printf ("XX%-023.12sXX\n", str);
+	printf ("XX%*.*sXX\n", n1, n2, str);
+	ft_printf ("XX%*.*sXX\n", n1, n2, str);
 
  return (1);
 }
