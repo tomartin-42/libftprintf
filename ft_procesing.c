@@ -7,39 +7,39 @@ void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 }
 
 // this function get the flags and save in the struct
-void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg)
+void	ft_get_flags (const char *str, t_flags *flg, va_list *pf_arg)
 {
 	int		offset;
 	bool	check;
 
 	check = false;
 	offset = 0;
-	string++;
-	while (!ft_strchr ("cspdiuxX", *string))
+	str++;
+	while (!ft_strchr ("cspdiuxX", *str))
 	{
-		if (*string == '-')
+		if (*str == '-')
 		{
-			flags->alig = true;
+			flg->alig = true;
 			offset++;
 		}
-		else if (ft_strchr("123456789*", *string) && flags->point == false)
-			flags->width = ft_get_whidt (string, &offset, pf_arg);
-		else if (*string == '0' && check == false)
+		else if (ft_strchr("123456789*", *str) && flg->point == false)
+			flg->width = ft_get_whidt (str, &offset, pf_arg);
+		else if (*str == '0' && check == false)
 		{
-			flags->zero = true;
+			flg->zero = true;
 			offset++;
 		}
-		else if (*string == '.')
+		else if (*str == '.')
 		{
-			flags->point = true;
-			flags->precision = ft_get_precision (string, &offset, pf_arg);
+			flg->point = true;
+			flg->precision = ft_get_precision (str, &offset, pf_arg);
 			offset++;
 		}
-		string = string + offset;
+		str = str + offset;
 		offset = 0;
 		check = true;
 	}
-	ft_write_type (string, flags, pf_arg);
+	ft_write_type (str, flg, pf_arg);
 }
 
 // this fuction get the number of whidt and add the value
