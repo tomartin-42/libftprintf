@@ -94,7 +94,8 @@ int	ft_get_precision (const char *string, int *offset, va_list *pf_arg)
 				return (answ);
 		}
 		s_precision = ft_stradd_char (s_precision, *string);
-		string++;	printf ("hola\n");;
+		string++;
+		*offset += 1;
 	}
 	answ = ft_atoi (s_precision);
 	free (s_precision);
