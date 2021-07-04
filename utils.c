@@ -139,13 +139,9 @@ void ft_dec_to_hex(long int num, char *code, int base, t_flags *flg)
 	{
 		ft_dec_to_hex(num / base, code, base, flg);
 		ft_dec_to_hex(num % base, code, base, flg);
-
 	}
 	else
-	{
 		flg->f_str = ft_stradd_char_empy(flg->f_str, code[num]);
-	}
-
 }
 
 char	*ft_stradd_char_empy(char const *s1, char c2)

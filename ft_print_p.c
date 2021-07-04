@@ -2,52 +2,59 @@
 
 static void ft_print_p_unalig (t_flags *flg, va_list *pf_arg, char c)
 {
-	char	*str;
-	int	    add;
+	unsigned long long int	pnt;
+	int						nc_str;
+	int						nc_width;
+	char					*head;
 
-	add = 0;
-	str = flg->f_str;
-
-    add = flg->width - (ft_strlen (str) + 1);
-    if (add < 0)
-        add = 0;
-    if (c == '0')
-    {
-        write (1, "0x", 2);
-        flg->len += 2;
-		ft_make_string_zero (add, &flg->len, c);
-		ft_to_write (str, ft_strlen (str) - 1 , flg);
-    }
-    else
-    {
-        ft_make_string_zero (add, &flg->len, c);
-        write (1, "0x", 2);
-        flg->len += 2;
-        ft_to_write (str, ft_strlen (str) - 1 , flg);
-    }
+	head = "0x";
+    pnt = va_arg (*pf_arg, unsigned long long int);
+    ft_dec_to_hex (pnt, "0123456789abcdef", 16, flg);
+	nc_str = ft_strlen (flg->f_str);
+	printf ("[[[[%s]]]]\n", flg->f_str);
+	if (flg->point == true)
+	{
+		if (flg->precision == 0)
+			nc_str = 0;
+		else if (flg->precision < ft_strlen (flg->f_str))
+			nc_str = flg->precision;
+		else if (flg->precision >= ft_strlen (flg->f_str))
+			nc_str = ft_strlen (flg->f_str);
+	}
+	nc_width = flg->width - (nc_str - 1);
+	ft_make_string_zero (nc_width, &flg->len, c);
+	ft_to_write (flg->f_str, nc_str , flg);
 }
 
 static void ft_print_p_alig (t_flags *flg, va_list *pf_arg, char c)
 {
-	char	*str;
-	int	    add;
+	unsigned long long int	pnt;
+	int						nc_str;
+	int						nc_width;
+	char					*head;
 
-	add = 0;
-	str = flg->f_str;
-    c = ' ';
-    add = flg->width - (ft_strlen (str) + 1);
-    if (add < 0)
-        add = 0;
-    write (1, "0x", 2);
-    flg->len += 2;
-    ft_to_write (str, ft_strlen (str) - 1 , flg);
-    ft_make_string_zero (add, &flg->len, c);
+	head = "0x";
+    pnt = va_arg (*pf_arg, unsigned long long int);
+    ft_dec_to_hex (pnt, "0123456789abcdef", 16, flg);
+	nc_str = ft_strlen (flg->f_str);
+	if (flg->point == true)
+	{
+		if (flg->precision == 0)
+			nc_str = 0;
+		else if (flg->precision < ft_strlen (flg->f_str))
+			nc_str = flg->precision;
+		else if (flg->precision >= ft_strlen (flg->f_str))
+			nc_str = ft_strlen (flg->f_str);
+	}
+	nc_width = flg->width - (nc_str - 1);
+	ft_to_write (flg->f_str, nc_str , flg);
+	ft_make_string_zero (nc_width, &flg->len, c);
 
 }
 
 void	ft_print_p (t_flags *flg, va_list *pf_arg)
 {
-    unsigned long long int    pnt;
+   /* unsigned long long int    pnt;
     char            *spnt;
 	char	c;
 
@@ -64,6 +71,15 @@ void	ft_print_p (t_flags *flg, va_list *pf_arg)
     {
 		ft_print_p_unalig (flg, pf_arg, c);
     }
+	else if (flg->alig == true)
+		ft_print_p_alig (flg, pf_arg, c);*/
+	char	c;
+	imprimeflags (flg);
+	c = ' ';
+	if (flg->alig == false && flg->zero == true)
+		c = '0';
+	if (flg->alig == false)
+		ft_print_p_unalig (flg, pf_arg, c);
 	else if (flg->alig == true)
 		ft_print_p_alig (flg, pf_arg, c);
 }

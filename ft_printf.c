@@ -19,19 +19,7 @@ int	ft_printf (const char *pf_string, ...)
 
 	flags.len = 0;			
 	va_start (arg, pf_string);
-	while (*pf_string)
-	{
-		if (*pf_string == '%')
-		{
-			ft_procesing (pf_string, &flags, &arg);
-			pf_string = pf_string + ft_skip (pf_string, &flags);
-		}
-		else
-		{
-			write (1, pf_string, 1);			flags.len += 1;
-		}
-		pf_string++;
-	}
+	ft_do_it (pf_string, &flags, &arg);
 	va_end (arg);
 	return (flags.len);
 }
@@ -74,4 +62,22 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 		 ft_print_p (flags, pf_arg);
  	else if (*pf_string == 'd')
  		flags->type = 'd';
+}
+
+void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
+{
+	while (*pf_string)
+	{
+		if (*pf_string == '%')
+		{
+			ft_procesing (pf_string, flags, arg);
+			pf_string = pf_string + ft_skip (pf_string, flags);
+		}
+		else
+		{
+			write (1, pf_string, 1);	
+			flags->len += 1;
+		}
+		pf_string++;
+	}	
 }

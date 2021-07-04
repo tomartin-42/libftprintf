@@ -39,6 +39,7 @@ typedef struct s_flag{
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
+void 	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
 ssize_t	ft_strlen (const char *str);
 int		ft_printf (const char *strg, ...);
 void	ft_init_flags (t_flags *flags);

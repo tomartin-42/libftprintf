@@ -6,7 +6,7 @@ static void ft_print_c_unalig (t_flags *flg, va_list *pf_arg, char c)
 	int	    nc_str;
 	int		nc_width;
 
-	chr = va_arg (*pf_arg, char *);
+	chr = va_arg (*pf_arg, int);
 	nc_str = 1;
 	if (flg->point == true)
 	{
