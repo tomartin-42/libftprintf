@@ -28,8 +28,12 @@ int main (void)
 	char *j;
 	j = &c;
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
-	printf ("XX%020pXX\n", j);
-	ft_printf ("XX%020pXX\n", j);
+	//printf ("XX%020pXX\n", j);
+	//ft_printf ("XX%020pXX\n", j);
+	int	d1 = 18;
+	int d2 = -26;
+	printf ("XX%010.*dXX\n",d1, d2);
+	ft_printf ("XX%010.*dXX\n",d1, d2);
 
  return (1);
 }

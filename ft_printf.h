@@ -34,6 +34,7 @@ typedef struct s_flag{
 	bool	pad;
 	bool	space;
 	bool	plus;
+	bool	negative;
 }	t_flags;
 
 # define INT_MIN -2147483648
@@ -63,6 +64,7 @@ void	ft_dec_to_hex(long int num, char *code, int base, t_flags *flg);
 void	ft_print_c (t_flags *flg, va_list *pf_arg);
 void	ft_print_s (t_flags *flg, va_list *pf_arg);
 void	ft_print_p (t_flags *flg, va_list *pf_arg);
+void 	ft_print_d (t_flags *flg, va_list *pf_arg);
 
 void	ft_make_string_zero (int num, int *len, char c);
 //void	ft_make_string_space (int num, int *len);
