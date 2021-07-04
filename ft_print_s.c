@@ -18,6 +18,8 @@ static void ft_print_s_unalig (t_flags *flg, va_list *pf_arg, char c)
 			nc_str = ft_strlen (str);
 	}
 	nc_width = flg->width - (nc_str - 1);
+	if (nc_width < 0)
+		nc_width = 0;
 	ft_make_string_zero (nc_width, &flg->len, c);
 	ft_to_write (str, nc_str , flg);
 }
@@ -40,6 +42,8 @@ static void ft_print_s_alig (t_flags *flg, va_list *pf_arg, char c)
 			nc_str = ft_strlen (str);
 	}
 	nc_width = flg->width - (nc_str - 1);
+	if (nc_width < 0)
+		nc_width = 0;
 	ft_to_write (str, nc_str , flg);
 	ft_make_string_zero (nc_width, &flg->len, c);
 }

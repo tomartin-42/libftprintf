@@ -28,8 +28,8 @@ int main (void)
 	char *j;
 	j = &c;
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
-	printf ("XX%005.39c-XX\n", c);
-	ft_printf ("XX%005.39c-XX\n", c);
+	printf ("XX%020pXX\n", j);
+	ft_printf ("XX%020pXX\n", j);
 
  return (1);
 }

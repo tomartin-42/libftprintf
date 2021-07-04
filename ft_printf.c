@@ -54,6 +54,7 @@ void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 
 void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
+	//imprimeflags (flags);
 	if (*pf_string == 'c')
 		ft_print_c (flags, pf_arg);
  	else if (*pf_string == 's')
