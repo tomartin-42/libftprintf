@@ -13,7 +13,7 @@ int main (void)
 	 // ------------- %f ---------------
 	 float	f = 123.45678;
 	 int	n1 = 9;
-	 int	n2 = 12;
+	 int	n2 = 2;
 	 printf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
@@ -22,13 +22,13 @@ int main (void)
 	 char	c = 'O';
 	// printf ("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	// ft_printf("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
-	char *str = "ABCDEF";
+	char *str = "ABCDEF" ;
 	//printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	//ft_printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	char *j;
 	j = &c;
-	printf ("XX%*.*sXX\n", n1, n2, str);
-	ft_printf ("XX%*.*sXX\n", n1, n2, str);
+	printf ("XX%cXX\n", cr);
+	ft_printf ("XX%cXX\n", cr);
 
  return (1);
 }

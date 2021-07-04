@@ -47,7 +47,7 @@ static void ft_print_s_alig (t_flags *flg, va_list *pf_arg, char c)
 void ft_print_s (t_flags *flg, va_list *pf_arg)
 {
 	char	c;
-	//imprimeflags (flg);
+	
 	c = ' ';
 	if (flg->alig == false && flg->zero == true)
 		c = '0';
