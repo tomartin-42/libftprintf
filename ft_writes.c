@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_make_string_zero (int num, int *len, char c)
+void	ft_make_string_zero (int num, t_flags *flg, char c)
 {
 	if (num < 0)
 		num = num * -1;
@@ -9,7 +9,7 @@ void	ft_make_string_zero (int num, int *len, char c)
 	{
 		write (1, &c, 1);
 	//printf ("HOLA [[%c]]\n", c);
-		len++;
+		flg->len = flg->len + 1;
 	}
 }
 

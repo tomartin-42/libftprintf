@@ -55,10 +55,10 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 		nc_width--;
 	nc_zero = flg->precision - ft_strlen (flg->f_str) + 1;
 	nc_width = flg->width - nc_zero - ft_strlen (flg->f_str);
-	ft_make_string_zero (nc_width, &flg->len, c);
+	ft_make_string_zero (nc_width, flg, c);
 	if (flg->negative == true)
-		ft_make_string_zero (2, flg->len, '-');
-	ft_make_string_zero (nc_zero, flg->len, '0');
+		ft_make_string_zero (2, flg, '-');
+	ft_make_string_zero (nc_zero, flg, '0');
 	ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
 	// if (flg->precision > ft_strlen (flg->f_str))
 	// {
@@ -84,7 +84,7 @@ static void	ft_print_d_alig (t_flags *flg, va_list *pf_arg, char c)
 		nc_width = 0;
 	//ft_procesin_point (flg, nc_str, nc_width);
 	ft_to_write (flg->f_str, nc_str, flg);
-	ft_make_string_zero (nc_width, &flg->len, c);
+	ft_make_string_zero (nc_width, flg, c);
 }
 
 void	ft_print_d (t_flags *flg, va_list *pf_arg)

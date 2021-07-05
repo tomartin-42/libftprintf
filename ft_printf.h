@@ -67,7 +67,7 @@ void	ft_print_s (t_flags *flg, va_list *pf_arg);
 void	ft_print_p (t_flags *flg, va_list *pf_arg);
 void 	ft_print_d (t_flags *flg, va_list *pf_arg);
 
-void	ft_make_string_zero (int num, int *len, char c);
+void	ft_make_string_zero (int num, t_flags *flg, char c);
 //void	ft_make_string_space (int num, int *len);
 int		ft_to_write (char *to_print, int leng, t_flags *flags);
 

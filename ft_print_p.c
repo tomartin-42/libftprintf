@@ -29,13 +29,13 @@ static void	ft_print_p_unalig (t_flags *flg, va_list *pf_arg, char c)
 		nc_width = 0;
 	if (flg->zero == false)
 	{
-		ft_make_string_zero (nc_width, &flg->len, c);
+		ft_make_string_zero (nc_width, flg, c);
 		ft_to_write (head, 2, flg);
 	}
 	else
 	{
 		ft_to_write (head, 2, flg);
-		ft_make_string_zero (nc_width, &flg->len, c);
+		ft_make_string_zero (nc_width, flg, c);
 	}
 	ft_to_write (flg->f_str, nc_str, flg);
 }
@@ -58,7 +58,7 @@ static void	ft_print_p_alig (t_flags *flg, va_list *pf_arg, char c)
 		nc_width = 0;
 	ft_to_write (head, 2, flg);
 	ft_to_write (flg->f_str, nc_str, flg);
-	ft_make_string_zero (nc_width, &flg->len, c);
+	ft_make_string_zero (nc_width, flg, c);
 }
 
 void	ft_print_p (t_flags *flg, va_list *pf_arg)
