@@ -53,6 +53,7 @@ int		ft_get_whidt (const char *string, int *offset, va_list *pf_arg, t_flags *fl
 int		ft_get_precision (const char *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_getx_whidt (va_list *pf_arg, t_flags *flg);
 int		ft_getx_precision (va_list *pf_arg, t_flags *flg);
+char	*ft_itoa (int n);
 
 int		ft_isdigit (int c);
 int		ft_atoi (const char *str);

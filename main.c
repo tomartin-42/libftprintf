@@ -32,8 +32,8 @@ int main (void)
 	//ft_printf ("XX%020pXX\n", j);
 	int	d1 = 18;
 	int d2 = -26;
-	printf ("XX%010.*dXX\n",d1, d2);
-	ft_printf ("XX%010.*dXX\n",d1, d2);
+	printf ("XX%020.5dXX\n", d1);
+	ft_printf ("XX%020.5dXX\n", d1);
 
  return (1);
 }
