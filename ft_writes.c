@@ -23,7 +23,7 @@ int		ft_to_write (char *to_print, int leng, t_flags *flags)
 	{
 		write (1, &to_print[i], 1);
 		i++;
+		flags->len = flags->len + i;
 	}
-	flags->len = flags->len + i;
 	return (i);
 }
