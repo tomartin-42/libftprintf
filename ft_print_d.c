@@ -20,10 +20,10 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 	nc_width = 0;
 	num = va_arg (*pf_arg, int);
 	if (num < 0)
-		{
-			flg->negative = true;
-			num = num * -1;
-		}
+	{
+		flg->negative = true;
+		num = num * -1;
+	}
 	flg->f_str = ft_itoa (num);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
@@ -49,10 +49,10 @@ static void	ft_print_d_alig (t_flags *flg, va_list *pf_arg, char c)
 	nc_width = 0;
 	num = va_arg (*pf_arg, int);
 	if (num < 0)
-		{
-			flg->negative = true;
-			num = num * -1;
-		}
+	{
+		flg->negative = true;
+		num = num * -1;
+	}
 	flg->f_str = ft_itoa (num);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)

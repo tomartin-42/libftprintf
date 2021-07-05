@@ -32,9 +32,10 @@ int main (void)
 	//ft_printf ("XX%020pXX\n", j);
 	int	d1 =-18;
 	int d2 = -26;
-	printf ("XX%.15pXX\n",&n1);
+	int x, y;
+	x = printf ("XX%.15pXX\n",&n1);
 	printf ("123456789012345678901234567890\n");
-	ft_printf ("XX%.15pXX\n",&n1);
-
+	y = ft_printf ("XX%.15pXX\n",&n1);
+	printf ("***%d - %d***\n", x, y);
  return (1);
 }
