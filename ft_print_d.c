@@ -43,6 +43,7 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 	int	nc_width;
 	int	nc_zero;
 	
+	nc_width = 0;
 	num = va_arg (*pf_arg, int);
 	if (num < 0)
 		{
@@ -50,15 +51,15 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 			num = num * -1;
 		}
 	flg->f_str = ft_itoa (num);
-	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (flg->negative == true)
 		nc_width--;
+	nc_zero = flg->precision - ft_strlen (flg->f_str) + 1;
+	nc_width = flg->width - nc_zero - ft_strlen (flg->f_str);
 	ft_make_string_zero (nc_width, &flg->len, c);
 	if (flg->negative == true)
 		ft_make_string_zero (2, flg->len, '-');
-	ft_make_string_zero (nc_zero + 1, flg->len, '0');
+	ft_make_string_zero (nc_zero, flg->len, '0');
 	ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
-	nc_width = flg->width - nc_zero - ft_strlen (flg->f_str);
 	// if (flg->precision > ft_strlen (flg->f_str))
 	// {
 	// 	c = '0';
