@@ -39,7 +39,7 @@ static int	ft_get_nc_str (t_flags *flg)
 static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 {
 	int	num;
-	int	nc_str;
+	//int	nc_str;
 	int	nc_width;
 	int	nc_zero;
 	
@@ -51,13 +51,19 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c)
 			num = num * -1;
 		}
 	flg->f_str = ft_itoa (num);
-	if (flg->negative == true)
+	nc_zero = flg->precision - ft_strlen (flg->f_str);
+	if (nc_zero < 0)
+		nc_zero = 0;
+	nc_width = flg->width - (nc_zero) - ft_strlen (flg->f_str);
+	if (nc_width < 0)
+		nc_width = 0;
+	//imprimeflags (flg);
+	//printf ("[[%d - %d]]", nc_zero, nc_width);
+	if (flg->negative == true && nc_width > 0)
 		nc_width--;
-	nc_zero = flg->precision - ft_strlen (flg->f_str) + 1;
-	nc_width = flg->width - nc_zero - ft_strlen (flg->f_str);
 	ft_make_string_zero (nc_width, flg, c);
 	if (flg->negative == true)
-		ft_make_string_zero (2, flg, '-');
+		ft_make_string_zero (1, flg, '-');
 	ft_make_string_zero (nc_zero, flg, '0');
 	ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
 	// if (flg->precision > ft_strlen (flg->f_str))
