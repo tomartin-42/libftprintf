@@ -12,7 +12,7 @@ int main (void)
 
 	 // ------------- %f ---------------
 	 float	f = 123.45678;
-	 int	n1 = 9;
+	 int	n1 = -9;
 	 int	n2 = 2;
 	 printf("--%*.*f--\n", n1, n2, f);
 
@@ -32,9 +32,9 @@ int main (void)
 	//ft_printf ("XX%020pXX\n", j);
 	int	d1 =-18;
 	int d2 = -26;
-	printf ("XX%20.6dXX\n", d1);
+	printf ("XX%-*.1dXX\n",n1, d1);
 	printf ("123456789012345678901234567890\n");
-	ft_printf ("XX%20.6dXX\n", d1);
+	ft_printf ("XX%-*.1dXX\n",n1, d1);
 
  return (1);
 }
