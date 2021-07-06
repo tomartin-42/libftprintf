@@ -17,7 +17,7 @@ static void	ft_print_xu_unalig (t_flags *flg, va_list *pf_arg, char c, LL num)
 	int						nc_zero;
 	
 	nc_width = 0;
-	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+	ft_dec_to_hex (num, "0123456789ABCDEF", 16, flg);
 	if (flg->point == true && flg->precision == 0 && num == 0)
 		flg->f_str = ft_strdup ("");
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
@@ -40,7 +40,7 @@ static void	ft_print_xu_alig (t_flags *flg, va_list *pf_arg, char c, LL num)
 	int						nc_zero;
 	
 	nc_width = 0;
-	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+	ft_dec_to_hex (num, "0123456789ABCDEF", 16, flg);
 	if (flg->point == true && flg->precision == 0 && num == 0)
 		flg->f_str = ft_strdup ("");
 	nc_zero = flg->precision - ft_strlen (flg->f_str);

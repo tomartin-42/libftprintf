@@ -3,7 +3,7 @@
 void	ft_make_string_zero (int num, t_flags *flg, char c)
 {
 	if (num < 0)
-		num = num * -1;
+		num = 0;
 	while (num-- > 0)
 	{
 		write (1, &c, 1);
