@@ -4,17 +4,17 @@ int main (void)
 {
 	// -------------- %c --------------- 
 	char	 cr = 'o';
- 	printf ("AAA%-10cAAAAAA\n", cr);
+ 	//printf ("AAA%-10cAAAAAA\n", cr);
 
 	 // ------------- %s ---------------
 	 char	*s = "WWWWWWWW";
-	 printf("--%-10.3s--\n", s);
+	 //printf("--%-10.3s--\n", s);
 
 	 // ------------- %f ---------------
 	 float	f = 123.45678;
 	 int	n1 = -9;
 	 int	n2 = 2;
-	 printf("--%*.*f--\n", n1, n2, f);
+	 //ßprintf("--%*.*f--\n", n1, n2, f);
 
 	// printf ("%d %d %d %d %d %d %d\n ", flags.alig, flags.zero, flags.point, flags.pad, flags.space, flags.plus, flags.width);
 	//flags.zero = true;
@@ -33,9 +33,9 @@ int main (void)
 	int	d1 =-18;
 	int d2 = -26;
 	int x, y;
-	x = printf ("XX%.15pXX\n",&n1);
+	x = printf ("XX%.15dXX\n",d1);
 	printf ("123456789012345678901234567890\n");
-	y = ft_printf ("XX%.15pXX\n",&n1);
+	y = ft_printf ("XX%.15dXX\n",d1);
 	printf ("***%d - %d***\n", x, y);
  return (1);
 }

@@ -13,7 +13,7 @@ void imprimeflags (t_flags *flags)
 	printf("bwidth = %d\n", flags->bwidth);
 	printf("precision = %d\n", flags->precision);
 	printf("len = %d\n", flags->len);
-	printf("str = %d - %s\n", ft_strlen (flags->f_str), flags->f_str);	
+	printf("str = %zd - %s\n", ft_strlen (flags->f_str), flags->f_str);	
 	printf("*********************\n");
 
 }
