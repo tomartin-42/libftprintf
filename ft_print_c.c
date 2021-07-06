@@ -1,58 +1,37 @@
 #include "ft_printf.h"
 
-static void ft_print_c_unalig (t_flags *flg, va_list *pf_arg, char c)
-{
-	char	chr;
-	int	    nc_str;
-	int		nc_width;
-
-	chr = va_arg (*pf_arg, int);
-	nc_str = 1;
-	if (flg->point == true)
-	{
-		if (flg->precision == 0)
-			nc_str = 0;
-		else if (flg->precision < 1)
-			nc_str = flg->precision;
-		else if (flg->precision >= 1)
-			nc_str = 1;
-	}
-	nc_width = flg->width - (nc_str - 1);
-	ft_make_string_zero (nc_width, flg, c);
-	ft_to_write (&chr, nc_str , flg);
+static void	ft_print_c_unalig (t_flags *flg, va_list *pf_arg, char c, char num)
+{	
+	ft_make_string_zero (flg->width - 1, flg, c);
+	ft_to_write (&num, 1, flg);
 }
 
-static void ft_print_c_alig (t_flags *flg, va_list *pf_arg, char c)
+static void	ft_print_c_alig (t_flags *flg, va_list *pf_arg, char c, char num)
 {
-	char	chr;
-	int	    nc_str;
-	int		nc_width;
-
-	chr = va_arg (*pf_arg, int);
-	nc_str = 1;
-	if (flg->point == true)
-	{
-		if (flg->precision == 0)
-			nc_str = 0;
-		else if (flg->precision < 1)
-			nc_str = flg->precision;
-		else if (flg->precision >= 1)
-			nc_str = 1;
-	}
-	nc_width = flg->width - (nc_str - 1);
-	ft_to_write (&chr, nc_str , flg);
-	ft_make_string_zero (nc_width, flg, c);
+	ft_to_write (&num, 1, flg);
+	ft_make_string_zero (flg->width - 1, flg, c);
 }
 
-void ft_print_c (t_flags *flg, va_list *pf_arg)
+void	ft_print_c (t_flags *flg, va_list *pf_arg)
 {
 	char	c;
-	
+	unsigned int	num;
+
+	num = va_arg (*pf_arg, unsigned int);
+	//if (num < 0)
+	//{
+	//	flg->negative = true;
+		//num = num * -1;
+	//}
 	c = ' ';
-	if (flg->alig == false && flg->zero == true)
-		c = '0';
+	//if (flg->precision >= flg->width)
+	//{
+		//c = '0';
+	//	flg->width = flg->precision;
+	//}
 	if (flg->alig == false)
-		ft_print_c_unalig (flg, pf_arg, c);
+		ft_print_c_unalig (flg, pf_arg, c, num);
 	else if (flg->alig == true)
-		ft_print_c_alig (flg, pf_arg, c);
+		ft_print_c_alig (flg, pf_arg, c, num);
+	free (flg->f_str);
 }
