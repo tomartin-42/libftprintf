@@ -7,8 +7,6 @@ void	ft_make_string_zero (int num, t_flags *flg, char c)
 	while (num-- > 0)
 	{
 		write (1, &c, 1);
-	//printf ("HOLA [[%c]]\n", c);
-		//flg->len = flg->len + 1;
 		flg->len += 1;
 	}
 }
@@ -24,8 +22,6 @@ void		ft_to_write (char *to_print, int leng, t_flags *flags)
 	{
 		write (1, &to_print[i], 1);
 		i++;
-		//flags->len = flags->len + i;
 		flags->len += 1;	
 	}
-	//return (i);
 }

@@ -39,6 +39,7 @@ typedef struct s_flag{
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
+# define LL unsigned long long int
 
 void 	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
 ssize_t	ft_strlen (const char *str);

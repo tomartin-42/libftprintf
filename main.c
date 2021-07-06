@@ -22,7 +22,7 @@ int main (void)
 	 char	c = 'O';
 	// printf ("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
 	// ft_printf("XX%-04*cXX%3.*c%03c\n", n1, c, n1, c, c);
-	char *str = "ABCDEF" ;
+	//char *str = "ABCDEF" ;
 	//printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	//ft_printf ("XX%10.2sXX%04.0cXX\n", str, c);
 	char *j;
@@ -30,12 +30,13 @@ int main (void)
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
 	//printf ("XX%020pXX\n", j);
 	//ft_printf ("XX%020pXX\n", j);
-	int	d1 =-18;
+	int	d1 = 0;
 	int d2 = -26;
+	int *p = 0;
 	int x, y;
-	x = printf ("XX%.15dXX\n",d1);
+	x = printf ("XX%2.1dXX\n",d1);
 	printf ("123456789012345678901234567890\n");
-	y = ft_printf ("XX%.15dXX\n",d1);
+	y = ft_printf ("XX%2.1dXX\n",d1);
 	printf ("***%d - %d***\n", x, y);
  return (1);
 }

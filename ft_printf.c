@@ -61,7 +61,7 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
  		ft_print_s (flags, pf_arg);
  	else if (*pf_string == 'p')
 		ft_print_p (flags, pf_arg);
- 	else if (*pf_string == 'd')
+ 	else if (*pf_string == 'd' || *pf_string == 'i')
  		ft_print_d (flags, pf_arg);
 }
 
