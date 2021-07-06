@@ -39,9 +39,10 @@ typedef struct s_flag{
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
-# define LL unsigned long long int
+# define LL unsigned long int
+# define CC const char
 
-void 	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
+void	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
 ssize_t	ft_strlen (const char *str);
 int		ft_printf (const char *strg, ...);
 void	ft_init_flags (t_flags *flags);
@@ -50,8 +51,8 @@ int		ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg);
 void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg);
 char	*ft_strchr (const char *s, int c);
 char	*ft_strdup (const char *s);
-int		ft_get_whidt (const char *string, int *offset, va_list *pf_arg, t_flags *flg);
-int		ft_get_precision (const char *string, int *offset, va_list *pf_arg, t_flags *flg);
+int		ft_get_whidt (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
+int		ft_get_prec (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_getx_whidt (va_list *pf_arg, t_flags *flg);
 int		ft_getx_precision (va_list *pf_arg, t_flags *flg);
 char	*ft_itoa (int n);
@@ -66,14 +67,16 @@ void	ft_dec_to_hex(long int num, char *code, int base, t_flags *flg);
 void	ft_print_c (t_flags *flg, va_list *pf_arg);
 void	ft_print_s (t_flags *flg, va_list *pf_arg);
 void	ft_print_p (t_flags *flg, va_list *pf_arg);
-void 	ft_print_d (t_flags *flg, va_list *pf_arg);
+void	ft_print_d (t_flags *flg, va_list *pf_arg);
+void	ft_print_x (t_flags *flg, va_list *pf_arg);
+void	ft_print_xu (t_flags *flg, va_list *pf_arg);
+
 
 void	ft_make_string_zero (int num, t_flags *flg, char c);
 //void	ft_make_string_space (int num, int *len);
-void		ft_to_write (char *to_print, int leng, t_flags *flags);
+void	ft_to_write (char *to_print, int leng, t_flags *flags);
 
 int		ft_skip (const char *pf_string, t_flags *flags);
-
 
 // BORRAR ---------------------------
 void	imprimeflags (t_flags *flags);

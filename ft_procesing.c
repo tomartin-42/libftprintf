@@ -44,7 +44,7 @@ int	ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg)
 	else if (*str == '.')
 	{
 		flg->point = true;
-		flg->precision = ft_get_precision (str, &off, pf_arg, flg);
+		flg->precision = ft_get_prec (str, &off, pf_arg, flg);
 		off++;
 	}
 	return (off);
@@ -78,7 +78,7 @@ int	ft_get_whidt (const char *string, int *off, va_list *pf_arg, t_flags *flg)
 
 // this fuction get the number of precision and add the value
 // at flags_struct
-int	ft_get_precision (const char *string, int *off, va_list *pf_arg, t_flags *flg)
+int	ft_get_prec (const char *string, int *off, va_list *pf_arg, t_flags *flg)
 {
 	char	*s_precision;
 	int		answ;
