@@ -54,8 +54,6 @@ void ft_print_s (t_flags *flg, va_list *pf_arg)
 
 	c = ' ';
 	flg->f_str = va_arg (*pf_arg, char *);
-	if (flg->alig == false && flg->zero == true)
-		c = ' ';
 	if (flg->alig == false)
 		ft_print_s_unalig (flg, pf_arg, c);
 	else if (flg->alig == true)

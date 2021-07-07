@@ -47,8 +47,8 @@ int main (void)
 	//printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
-	x = printf("%-2.50sX\n", s);
-	y = ft_printf ("%-2.50sX\n", s);
+	x = printf("%-020.3sX\n", s);
+	y = ft_printf ("%-020.3sX\n", s);
 	printf ("123456789012345678901234567890\n");
 	printf ("[[%d - %d]]\n", x, y);
 	//x = printf("%20.30%X\n");
