@@ -7,7 +7,7 @@ int main (void)
  	//printf ("AAA%-10cAAAAAA\n", cr);
 
 	 // ------------- %s ---------------
-	 char	*s = "ABCDEFGH";
+	 char	*s = "ABCDEFGHIJ";
 	 //printf("--%-10.3s--\n", s);
 
 	 // ------------- %f ---------------
@@ -47,10 +47,10 @@ int main (void)
 	//printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
-	x = printf("%20.3sX\n", s);
-	y = ft_printf ("%20.3sX\n", s);
+	x = printf("%-2.50sX\n", s);
+	y = ft_printf ("%-2.50sX\n", s);
 	printf ("123456789012345678901234567890\n");
-	//printf ("[[%d - %d]]\n", x, y);
+	printf ("[[%d - %d]]\n", x, y);
 	//x = printf("%20.30%X\n");
 	//y = ft_printf ("%X\n");
  return (1);
