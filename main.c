@@ -7,7 +7,7 @@ int main (void)
  	//printf ("AAA%-10cAAAAAA\n", cr);
 
 	 // ------------- %s ---------------
-	 char	*s = "WWWWWWWW";
+	 char	*s = "ABCDEFGH";
 	 //printf("--%-10.3s--\n", s);
 
 	 // ------------- %f ---------------
@@ -29,9 +29,9 @@ int main (void)
 	j = &c;
 	//j = NULL;
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
-	printf ("%023.pX\n", j);
+	//printf ("%020.18pX\n", j);
 	printf ("123456789012345678901234567890\n");
-	ft_printf ("%023.pX\n", j);
+	//ft_printf ("%020.18pX\n", j);
 	int	d1 = 0;
 	int d2 = -26;
 	int *p = 0;
@@ -43,9 +43,13 @@ int main (void)
 	
 	//y = ft_printf ("XX%pXX%-18.16pXX  %pXX  %20pXX%10pXX%2pXX%2pXX%2pXX%2pXX%pXX%pXX\n",&h[1],&h[2],&h[3],&h[4],&h[5],&h[6],&h[7],&h[8],&h[9],&h[10],&h[0]);
 
-	x = printf ("%30.15x\n", d2);
+	//x = printf ("%30.15x\n", d2);
 	//printf ("123456789012345678901234567890\n");
-	y = ft_printf ("%30.15x\n", d2);
+	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
+	x = printf("%10.4sX\n", s);
+	y = ft_printf ("%10.4sX\n", s);
+	//printf ("123456789012345678901234567890\n");
+	//printf ("[[%d - %d]]\n", x, y);
  return (1);
 }
