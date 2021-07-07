@@ -47,9 +47,11 @@ int main (void)
 	//printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
-	x = printf("%10.4sX\n", s);
-	y = ft_printf ("%10.4sX\n", s);
-	//printf ("123456789012345678901234567890\n");
+	x = printf("%20.3sX\n", s);
+	y = ft_printf ("%20.3sX\n", s);
+	printf ("123456789012345678901234567890\n");
 	//printf ("[[%d - %d]]\n", x, y);
+	//x = printf("%20.30%X\n");
+	//y = ft_printf ("%X\n");
  return (1);
 }

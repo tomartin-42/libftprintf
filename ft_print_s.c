@@ -15,9 +15,13 @@ static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 		printf("[[[%d - %d]]]\n", nc_width, nc_zero);
 		ft_make_string_zero (nc_width, flg, c);
 		if (flg->point == true && flg->precision < ft_strlen (flg->f_str))
+		{
 			ft_to_write (flg->f_str, nc_zero, flg);
+		}
 		else
+		{
 			ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
+		}
 	}
 }
 
@@ -27,7 +31,10 @@ static void ft_print_s_unalig (t_flags *flg, va_list *pf_arg, char c)
 	int		nc_width;
 
 	nc_width = 0;
-	nc_zero = flg->precision;
+	if (flg->precision < ft_strlen (flg->f_str))
+		nc_zero = flg->precision;
+	else
+		nc_zero = ft_strlen (flg->f_str);
 	if (nc_zero < 0)
 		nc_zero = 0;
 	nc_width = flg->width - ft_strlen (flg->f_str);
