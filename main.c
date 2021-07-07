@@ -29,8 +29,9 @@ int main (void)
 	j = &c;
 	//j = NULL;
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
-	printf ("XX%-20pXX\n", j);
-	ft_printf ("XX%-20pXX\n", j);
+	printf ("%023.pX\n", j);
+	printf ("123456789012345678901234567890\n");
+	ft_printf ("%023.pX\n", j);
 	int	d1 = 0;
 	int d2 = -26;
 	int *p = 0;
