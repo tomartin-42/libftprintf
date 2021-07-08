@@ -67,7 +67,7 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 	else if (*pf_string == 'X')
 		ft_print_xu (flags, pf_arg);
 	else if (*pf_string == '%')
-		ft_print_por (flags, pf_arg);
+		ft_print_por (flags);
 }
 
 void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
@@ -77,7 +77,7 @@ void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
 		if (*pf_string == '%')
 		{
 			ft_procesing (pf_string, flags, arg);
-			pf_string = pf_string + ft_skip (pf_string, flags);
+			pf_string = pf_string + ft_skip (pf_string);
 		}
 		else
 		{
