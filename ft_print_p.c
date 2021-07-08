@@ -42,7 +42,7 @@ static void	ft_subprint_a (t_flags *flg, int nc_zero, int nc_width, char c)
 	}
 }
 
-static void	ft_print_p_unalig (t_flags *flg, va_list *pf_arg, char c, LL num)
+static void	ft_print_p_unalig (t_flags *flg, char c, LL num)
 {
 	int		nc_width;
 	int		nc_zero;
@@ -58,7 +58,7 @@ static void	ft_print_p_unalig (t_flags *flg, va_list *pf_arg, char c, LL num)
 	ft_subprint_ua (flg, nc_zero, nc_width, c);
 }
 
-static void	ft_print_p_alig (t_flags *flg, va_list *pf_arg, char c, LL num)
+static void	ft_print_p_alig (t_flags *flg, char c, LL num)
 {
 	int						nc_width;
 	int						nc_zero;
@@ -83,18 +83,9 @@ void	ft_print_p (t_flags *flg, va_list *pf_arg)
 	num = va_arg (*pf_arg, unsigned long int);
 	if (num < 0)
 		flg->negative = true;
-	/*if (flg->zero == true && flg->alig == false)
-		//c = '0';
-	if (flg->precision >= flg->width)
-	{
-		//c = '0';
-		//flg->width = flg->precision + 2;
-		//flg->zero = true;
-		//printf ("{{{{%d}}}}\n", flg->width);
-	}*/
 	if (flg->alig == false)
-		ft_print_p_unalig (flg, pf_arg, c, num);
+		ft_print_p_unalig (flg, c, num);
 	else if (flg->alig == true)
-		ft_print_p_alig (flg, pf_arg, c, num);
+		ft_print_p_alig (flg, c, num);
 	free (flg->f_str);
 }

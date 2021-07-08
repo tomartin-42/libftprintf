@@ -34,7 +34,7 @@ static void	ft_print_xu_unalig (t_flags *flg, va_list *pf_arg, char c, LL num)
 	ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
 }
 
-static void	ft_print_xu_alig (t_flags *flg, va_list *pf_arg, char c, LL num)
+static void	ft_print_xu_alig (t_flags *flg, char c, LL num)
 {
 	int						nc_width;
 	int						nc_zero;
@@ -76,8 +76,8 @@ void	ft_print_xu (t_flags *flg, va_list *pf_arg)
 		flg->width = flg->precision;
 	}
 	if (flg->alig == false)
-		ft_print_xu_unalig (flg, pf_arg, c, num);
+		ft_print_xu_unalig (flg, c, num);
 	else if (flg->alig == true)
-		ft_print_xu_alig (flg, pf_arg, c, num);
+		ft_print_xu_alig (flg, c, num);
 	free (flg->f_str);
 }

@@ -24,7 +24,7 @@ int	ft_printf (const char *pf_string, ...)
 	return (flags.len);
 }
 
-int	ft_skip (const char *string, t_flags *flags)
+int	ft_skip (const char *string)
 {
 	int	offset;
 
@@ -37,7 +37,7 @@ int	ft_skip (const char *string, t_flags *flags)
 			string++;
 			offset++;
 		}
-		if (ft_strchr ("cspdiuxX", *string))
+		if (ft_strchr ("cspdiuxX%", *string))
 		{
 			string++;
 			offset++;
@@ -54,7 +54,6 @@ void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 
 void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
-	//imprimeflags (flags);
 	if (*pf_string == 'c')
 		ft_print_c (flags, pf_arg);
  	else if (*pf_string == 's')
@@ -67,6 +66,8 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 		ft_print_x (flags, pf_arg);
 	else if (*pf_string == 'X')
 		ft_print_xu (flags, pf_arg);
+	else if (*pf_string == '%')
+		ft_print_por (flags, pf_arg);
 }
 
 void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)

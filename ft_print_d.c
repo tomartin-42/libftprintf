@@ -1,17 +1,6 @@
 #include "ft_printf.h"
 
-static int	ft_get_nc_str (t_flags *flg)
-{
-	if (flg->precision == 0)
-		return (0);
-	else if (flg->precision < ft_strlen (flg->f_str))
-		return (flg->precision);
-	else if (flg->precision >= ft_strlen (flg->f_str))
-		return (ft_strlen (flg->f_str));
-	return (0);
-}
-
-static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c, int num)
+static void	ft_print_d_unalig (t_flags *flg, char c, int num)
 {
 	int	nc_width;
 	int	nc_zero;
@@ -35,7 +24,7 @@ static void	ft_print_d_unalig (t_flags *flg, va_list *pf_arg, char c, int num)
 	ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
 }
 
-static void	ft_print_d_alig (t_flags *flg, va_list *pf_arg, char c, int num)
+static void	ft_print_d_alig (t_flags *flg, char c, int num)
 {
 	int	nc_width;
 	int	nc_zero;
@@ -77,7 +66,7 @@ void	ft_print_d (t_flags *flg, va_list *pf_arg)
 		flg->width = flg->precision;
 	}
 	if (flg->alig == false)
-		ft_print_d_unalig (flg, pf_arg, c, num);
+		ft_print_d_unalig (flg, c, num);
 	else if (flg->alig == true)
-		ft_print_d_alig (flg, pf_arg, c, num);
+		ft_print_d_alig (flg, c, num);
 }

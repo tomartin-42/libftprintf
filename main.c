@@ -30,7 +30,6 @@ int main (void)
 	//j = NULL;
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
 	//printf ("%020.18pX\n", j);
-	printf ("123456789012345678901234567890\n");
 	//ft_printf ("%020.18pX\n", j);
 	int	d1 = 0;
 	int d2 = -26;
@@ -47,11 +46,12 @@ int main (void)
 	//printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
-	x = printf("%-020.3sX\n", s);
-	y = ft_printf ("%-020.3sX\n", s);
+	//x = printf("%-020.3sX\n", s);
+	//y = ft_printf ("%-020.3sX\n", s);
+	printf ("123456789012345678901234567890\n");
+	x = printf("%-010.20%X\n");
+	y = ft_printf ("%-010.20%X\n");
 	printf ("123456789012345678901234567890\n");
 	printf ("[[%d - %d]]\n", x, y);
-	//x = printf("%20.30%X\n");
-	//y = ft_printf ("%X\n");
  return (1);
 }

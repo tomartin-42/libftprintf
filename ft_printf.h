@@ -70,13 +70,12 @@ void	ft_print_p (t_flags *flg, va_list *pf_arg);
 void	ft_print_d (t_flags *flg, va_list *pf_arg);
 void	ft_print_x (t_flags *flg, va_list *pf_arg);
 void	ft_print_xu (t_flags *flg, va_list *pf_arg);
-
+void	ft_print_por (t_flags *flg);
 
 void	ft_make_string_zero (int num, t_flags *flg, char c);
-//void	ft_make_string_space (int num, int *len);
 void	ft_to_write (char *to_print, int leng, t_flags *flags);
 
-int		ft_skip (const char *pf_string, t_flags *flags);
+int		ft_skip (const char *pf_string);
 
 // BORRAR ---------------------------
 void	imprimeflags (t_flags *flags);

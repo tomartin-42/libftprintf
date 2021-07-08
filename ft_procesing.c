@@ -7,15 +7,13 @@ void	ft_get_flags (const char *str, t_flags *flg, va_list *pf_arg)
 
 	off = 0;
 	str++;
-	while (!ft_strchr ("cspdiuxX", *str))
+	while (!ft_strchr ("cspdiuxX%", *str))
 	{
 		off = ft_proces_flags (str, flg, pf_arg);
 		str = str + off;
 		off = 0;
-		if (!ft_strchr ("cspdiuxX0123456789*.-", *str))
-		{
+		if (!ft_strchr ("cspdiuxX0123456789*.-%", *str))
 			str += 1;
-		}	
 	}
 	if (flg->width > 0)
 		flg->bwidth = true;
