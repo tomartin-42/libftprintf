@@ -45,9 +45,9 @@ static char *a11;
 static void *a12;
 int x, y;
 //x = printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
-x = printf ("%05d\n", 43);
+x = printf ("%-25.10d\n", 43);
 printf ("123456789012345678901234567890\n");
-y = ft_printf ("%05d\n", 43);
+y = ft_printf ("%-25.10d\n", 43);
 //y = ft_printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70\np",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 
 	int	d1 = 0;

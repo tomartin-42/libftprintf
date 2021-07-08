@@ -53,11 +53,11 @@ void	ft_print_xu (t_flags *flg, va_list *pf_arg)
 	unsigned long int	num;
 
 	num = va_arg (*pf_arg, unsigned long int);
-	if (num < 0)
-	{
-		flg->negative = true;
-		num = num * -1;
-	}
+	//if (num < 0)
+	//{
+	//	flg->negative = true;
+	//	num = num * -1;
+	//}
 	c = ' ';
 	if (flg->precision >= flg->width)
 	{
