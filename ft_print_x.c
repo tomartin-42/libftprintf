@@ -1,16 +1,5 @@
 #include "ft_printf.h"
 
-static int	ft_get_nc_str (t_flags *flg)
-{
-	if (flg->precision == 0)
-		return (0);
-	else if (flg->precision < ft_strlen (flg->f_str))
-		return (flg->precision);
-	else if (flg->precision >= ft_strlen (flg->f_str))
-		return (ft_strlen (flg->f_str));
-	return (0);
-}
-
 static void	ft_print_x_unalig (t_flags *flg, char c, LL num)
 {
 	int						nc_width;

@@ -49,9 +49,9 @@ char	*ft_stradd_char(char const *s1, char c2)
 	return (p);
 }
 
-void ft_dec_to_hex(long int num, char *code, int base, t_flags *flg)
+void ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg)
 {
-	if (num > base)
+	if (num >= base)
 	{
 		ft_dec_to_hex(num / base, code, base, flg);
 		ft_dec_to_hex(num % base, code, base, flg);

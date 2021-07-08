@@ -7,7 +7,7 @@ int main (void)
  	//printf ("AAA%-10cAAAAAA\n", cr);
 
 	 // ------------- %s ---------------
-	 char	*s = "ABCDEFGHIJ";
+	 char	*s = "hi low\0don't print me lol\0";
 	 //printf("--%-10.3s--\n", s);
 
 	 // ------------- %f ---------------
@@ -31,13 +31,31 @@ int main (void)
 	//printf ("XX%-0-0-0-0-0-0-0-0-0-0-0-0-0* kk\n", str);
 	//printf ("%020.18pX\n", j);
 	//ft_printf ("%020.18pX\n", j);
+static char	a01;
+static unsigned char a02;
+static short a03;
+static unsigned short a04;
+static int a05;
+static unsigned int a06;
+static long a07;
+static unsigned long a08;
+static long long a09;
+static unsigned long long a10;
+static char *a11;
+static void *a12;
+int x, y;
+//x = printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+x = printf ("%03d\n", 0);
+	//printf ("123456789012345678901234567890\n");
+y = ft_printf ("%03d\n", 0);
+//y = ft_printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70\np",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+
 	int	d1 = 0;
 	int d2 = -26;
 	int *p = 0;
-	int x, y;
 	int h[11] = {-12,-23,-43,-5,-45,-54,-23,-12,-34, -8, -0};
-	//printf ("%p\n", 7);
-	//ft_printf ("%p\n", 7);
+	//x = printf ("%5.p\n", 0);
+	//y = ft_printf ("%5.p\n", 0);
 	//x = printf ("XX%pXX%-18.16pXX  %pXX  %20pXX%10pXX%2pXX%2pXX%2pXX%2pXX%pXX%pXX\n",&h[1],&h[2],&h[3],&h[4],&h[5],&h[6],&h[7],&h[8],&h[9],&h[10],&h[0]);
 	
 	//y = ft_printf ("XX%pXX%-18.16pXX  %pXX  %20pXX%10pXX%2pXX%2pXX%2pXX%2pXX%pXX%pXX\n",&h[1],&h[2],&h[3],&h[4],&h[5],&h[6],&h[7],&h[8],&h[9],&h[10],&h[0]);
@@ -46,11 +64,11 @@ int main (void)
 	//printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
-	//x = printf("%-020.3sX\n", s);
-	//y = ft_printf ("%-020.3sX\n", s);
-	printf ("123456789012345678901234567890\n");
-	x = printf("%-010.20%X\n");
-	y = ft_printf ("%-010.20%X\n");
+	//s = NULL;
+	//x = printf("%.09s\n", s);
+	//y = ft_printf ("%.09s\n", s);
+	//x = printf("%-010.20%X\n");
+	//y = ft_printf ("%-010.20%X\n");
 	printf ("123456789012345678901234567890\n");
 	printf ("[[%d - %d]]\n", x, y);
  return (1);

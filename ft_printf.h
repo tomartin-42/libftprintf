@@ -39,7 +39,7 @@ typedef struct s_flag{
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
-# define LL unsigned long int
+# define LL unsigned long long int
 # define CC const char
 
 void	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
@@ -63,7 +63,7 @@ char	*ft_strjoin (char const *s1, char const *s2);
 char	*ft_stradd_char (char const *s1, char c2);
 char	*ft_stradd_char_empy(char const *s1, char c2);
 void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg);
-void	ft_dec_to_hex(long int num, char *code, int base, t_flags *flg);
+void	ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg);
 void	ft_print_c (t_flags *flg, va_list *pf_arg);
 void	ft_print_s (t_flags *flg, va_list *pf_arg);
 void	ft_print_p (t_flags *flg, va_list *pf_arg);

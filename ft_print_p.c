@@ -4,7 +4,7 @@ static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 {
 	if (flg->zero == true)
 	{	if (flg->width > 0 && flg->point == false)
-			ft_make_string_zero (nc_width, flg, '0');
+			ft_make_string_zero (nc_width, flg, c);
 		else
 			ft_make_string_zero (nc_width, flg, c);
 		ft_to_write ("0x", 2, flg);
@@ -48,6 +48,9 @@ static void	ft_print_p_unalig (t_flags *flg, char c, LL num)
 	int		nc_zero;
 	
 	nc_width = 0;
+	if (num == 0)
+		flg->f_str = ft_strdup ("");
+	else
 	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
@@ -64,6 +67,9 @@ static void	ft_print_p_alig (t_flags *flg, char c, LL num)
 	int						nc_zero;
 	
 	nc_width = 0;
+	if (num == 0)
+		flg->f_str = ft_strdup ("");
+	else
 	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
@@ -76,11 +82,14 @@ static void	ft_print_p_alig (t_flags *flg, char c, LL num)
 
 void	ft_print_p (t_flags *flg, va_list *pf_arg)
 {
-	char				c;
-	unsigned long int	num;
+	char	c;
+	LL		num;
 
 	c = ' ';
-	num = va_arg (*pf_arg, unsigned long int);
+	if (flg->zero == true)
+		c = '0';
+	flg->f_str = ft_strdup ("");
+	num = va_arg (*pf_arg, LL);
 	if (num < 0)
 		flg->negative = true;
 	if (flg->alig == false)
