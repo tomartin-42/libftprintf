@@ -2,19 +2,19 @@
 
 static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 {
-		if (flg->negative == true)
-		{
-			ft_make_string_zero (nc_width, flg, c);
-			ft_to_write (flg->f_str, 1, flg);
-			ft_make_string_zero (nc_zero, flg, '0');
-			ft_to_write (flg->f_str + 1, ft_strlen (flg->f_str) - 1, flg);
-		}
-		else 
-		{
-			ft_make_string_zero (nc_width, flg, c);
-			ft_make_string_zero (nc_zero, flg, '0');
-			ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
-		}
+	if (flg->negative == true)
+	{
+		ft_make_string_zero (nc_width, flg, c);
+		ft_to_write (flg->f_str, 1, flg);
+		ft_make_string_zero (nc_zero, flg, '0');
+		ft_to_write (flg->f_str + 1, ft_strlen (flg->f_str) - 1, flg);
+	}
+	else 
+	{
+		ft_make_string_zero (nc_width, flg, c);
+		ft_make_string_zero (nc_zero, flg, '0');
+		ft_to_write (flg->f_str, ft_strlen (flg->f_str), flg);
+	}
 }
 
 static void	ft_subprint_a (t_flags *flg, int nc_zero, int nc_width, char c)
@@ -78,13 +78,13 @@ static void	ft_print_d_alig (t_flags *flg, char c, LL num)
 }
 
 void	ft_print_d (t_flags *flg, va_list *pf_arg)
-{
+/*{
 	char	c;
 	int		num;
 
 	c = ' ';
 	if (flg->zero == true)
-		c = '0';
+		c = ' ';
 	flg->f_str = ft_strdup ("");
 	num = va_arg (*pf_arg, long int);
 	if (num < 0)
@@ -94,4 +94,24 @@ void	ft_print_d (t_flags *flg, va_list *pf_arg)
 	else if (flg->alig == true)
 		ft_print_d_alig (flg, c, num);
 	free (flg->f_str);
+}*/
+{
+	char	c;
+	int	num;
+	
+	c = ' ';
+	if (flg->zero == true)
+		c = '0';
+	num = va_arg (*pf_arg, int);
+	if (num < 0)
+		flg->negative = true;
+	if (flg->precision >= flg->width)
+	{
+		c = '0';
+		flg->width = flg->precision;
+	}
+	if (flg->alig == false)
+		ft_print_d_unalig (flg, c, num);
+	else if (flg->alig == true)
+		ft_print_d_alig (flg, c, num);
 }
