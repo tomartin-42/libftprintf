@@ -11,7 +11,7 @@ static int	ft_get_nc_str (t_flags *flg)
 	return (0);
 }
 
-static void	ft_print_xu_unalig (t_flags *flg, va_list *pf_arg, char c, LL num)
+static void	ft_print_xu_unalig (t_flags *flg, char c, LL num)
 {
 	int						nc_width;
 	int						nc_zero;
