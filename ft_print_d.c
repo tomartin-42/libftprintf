@@ -53,13 +53,15 @@ void	ft_print_d (t_flags *flg, va_list *pf_arg)
 	char	c;
 	int	num;
 	
+	c = ' ';
+	if (flg->zero == true)
+		c = '0';
 	num = va_arg (*pf_arg, int);
 	if (num < 0)
 	{
 		flg->negative = true;
 		num = num * -1;
 	}
-	c = ' ';
 	if (flg->precision >= flg->width)
 	{
 		c = '0';

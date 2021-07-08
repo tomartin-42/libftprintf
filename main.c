@@ -45,17 +45,17 @@ static char *a11;
 static void *a12;
 int x, y;
 //x = printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
-x = printf ("%03d\n", 0);
-	//printf ("123456789012345678901234567890\n");
-y = ft_printf ("%03d\n", 0);
+x = printf ("%05d\n", 43);
+printf ("123456789012345678901234567890\n");
+y = ft_printf ("%05d\n", 43);
 //y = ft_printf ("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70\np",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 
 	int	d1 = 0;
 	int d2 = -26;
 	int *p = 0;
 	int h[11] = {-12,-23,-43,-5,-45,-54,-23,-12,-34, -8, -0};
-	//x = printf ("%5.p\n", 0);
-	//y = ft_printf ("%5.p\n", 0);
+	//x = printf ("%p\n", 0);
+	//y = ft_printf ("%p\n", 0);
 	//x = printf ("XX%pXX%-18.16pXX  %pXX  %20pXX%10pXX%2pXX%2pXX%2pXX%2pXX%pXX%pXX\n",&h[1],&h[2],&h[3],&h[4],&h[5],&h[6],&h[7],&h[8],&h[9],&h[10],&h[0]);
 	
 	//y = ft_printf ("XX%pXX%-18.16pXX  %pXX  %20pXX%10pXX%2pXX%2pXX%2pXX%2pXX%pXX%pXX\n",&h[1],&h[2],&h[3],&h[4],&h[5],&h[6],&h[7],&h[8],&h[9],&h[10],&h[0]);
