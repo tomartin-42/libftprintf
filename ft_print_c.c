@@ -14,7 +14,7 @@ static void	ft_print_c_alig (t_flags *flg, char c, char num)
 
 void	ft_print_c (t_flags *flg, va_list *pf_arg)
 {
-	char	c;
+	char			c;
 	unsigned int	num;
 
 	num = va_arg (*pf_arg, unsigned int);

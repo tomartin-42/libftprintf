@@ -30,7 +30,6 @@ int	ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg)
 		flg->alig = true;
 		off++;
 	}
-	//else if (ft_strchr("123456789*", *str) && flg->point == false)
 	else if (ft_strchr("123456789*", *str))
 		flg->width = ft_get_whidt (str, &off, pf_arg, flg);
 	else if (*str == '0')

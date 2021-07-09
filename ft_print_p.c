@@ -90,8 +90,6 @@ void	ft_print_p (t_flags *flg, va_list *pf_arg)
 		c = '0';
 	flg->f_str = ft_strdup ("");
 	num = va_arg (*pf_arg, LL);
-	//if (num < 0)
-	//s	flg->negative = true;
 	if (flg->alig == false)
 		ft_print_p_unalig (flg, c, num);
 	else if (flg->alig == true)
