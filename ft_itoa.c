@@ -45,7 +45,7 @@ static char	*ft_reverse (char *str)
 	return (aux);
 }
 
-char	*ft_itoa (int n)
+char	*ft_itoa (long int n)
 {
 	char	*a;
 	int		i;

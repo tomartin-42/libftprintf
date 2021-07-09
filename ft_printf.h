@@ -55,7 +55,7 @@ int		ft_get_whidt (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_get_prec (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_getx_whidt (va_list *pf_arg, t_flags *flg);
 int		ft_getx_precision (va_list *pf_arg, t_flags *flg);
-char	*ft_itoa (int n);
+char	*ft_itoa (long int n);
 
 int		ft_isdigit (int c);
 int		ft_atoi (const char *str);
@@ -68,6 +68,7 @@ void	ft_print_c (t_flags *flg, va_list *pf_arg);
 void	ft_print_s (t_flags *flg, va_list *pf_arg);
 void	ft_print_p (t_flags *flg, va_list *pf_arg);
 void	ft_print_d (t_flags *flg, va_list *pf_arg);
+void	ft_print_u (t_flags *flg, va_list *pf_arg);
 void	ft_print_x (t_flags *flg, va_list *pf_arg);
 void	ft_print_xu (t_flags *flg, va_list *pf_arg);
 void	ft_print_por (t_flags *flg);

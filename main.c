@@ -65,10 +65,14 @@ printf ("123456789012345678901234567890\n");
 	//y = ft_printf ("%30.15x\n", d2);
 	//printf ("***%d - %d***\n", x, y);
 	//s = NULL;
-	y = printf("%-4k\n", 9648627);
+	//y = printf("%-4k\n", 9648627);
 	//y = ft_printf ("%.09s\n", s);
-	x = ft_printf("%-4k\n", 9648627);
+	//x = ft_printf("%-4k\n", 9648627);
 	//y = ft_printf ("%-010.20%X\n");
+	
+	x = printf ("%u\n", -20);
+	y = ft_printf ("%u\n", -20);
+	
 	printf ("123456789012345678901234567890\n");
 	printf ("[[%d - %d]]\n", x, y);
  return (1);

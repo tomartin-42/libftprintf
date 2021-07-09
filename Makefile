@@ -11,6 +11,7 @@ SRC = ft_init_flag.c \
 				ft_print_p.c \
 				ft_print_por.c \
 				ft_print_s.c \
+				ft_print_u.c \
 				ft_print_x.c \
 				ft_print_xu.c \
 				ft_printf.c \

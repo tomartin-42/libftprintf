@@ -48,7 +48,7 @@ static void	ft_subprint_a (t_flags *flg, int nc_zero, int nc_width, char c)
 	}
 }
 
-static void	ft_print_d_alig (t_flags *flg, char c, LL num)
+static void	ft_print_u_alig (t_flags *flg, char c, LL num)
 {
 	int		nc_width;
 	int		nc_zero;
@@ -57,7 +57,7 @@ static void	ft_print_d_alig (t_flags *flg, char c, LL num)
 	if (num == 0 && flg->point == true)
 	;
 	else
-		flg->f_str = ft_itoa ((int) num);
+		flg->f_str = ft_itoa (num);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (flg->negative == true)
 	{
@@ -75,16 +75,15 @@ static void	ft_print_d_alig (t_flags *flg, char c, LL num)
 		ft_subprint_a (flg, nc_zero, nc_width, c);
 }
 
-void	ft_print_d (t_flags *flg, va_list *pf_arg)
+void	ft_print_u (t_flags *flg, va_list *pf_arg)
 {
-	char	c;
-	int		num;
+	char			c;
+	unsigned int	num;
 
 	c = ' ';
 	flg->f_str = ft_strdup ("");
-	num = va_arg (*pf_arg, long int);
+	num = va_arg (*pf_arg, unsigned int);
 	if (num < 0)
 		flg->negative = true;
-	ft_print_d_alig (flg, c, num);
-	//free (flg->f_str);
+	ft_print_u_alig (flg, c, num);
 }
