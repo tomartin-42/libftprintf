@@ -20,6 +20,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <limits.h>
 
 typedef struct s_flag{
 	char	*f_str;
@@ -37,8 +38,6 @@ typedef struct s_flag{
 	bool	negative;
 }	t_flags;
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
 # define LL unsigned long long int
 # define CC const char
 
