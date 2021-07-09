@@ -54,7 +54,9 @@ static void	ft_print_d_alig (t_flags *flg, char c, LL num)
 	int		nc_zero;
 
 	nc_width = 0;
-	if (num != 0)
+	if (num == 0 && flg->point == true)
+	;
+	else
 		flg->f_str = ft_itoa (num);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (flg->negative == true)
