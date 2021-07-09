@@ -15,7 +15,7 @@ static void	ft_print_por_alig (t_flags *flg, char c, char num)
 
 void	ft_print_por (t_flags *flg)
 {
-	char	c;
+	char			c;
 	unsigned int	num;
 
 	num = '%';
@@ -26,5 +26,4 @@ void	ft_print_por (t_flags *flg)
 		ft_print_por_unalig (flg, c, num);
 	else if (flg->alig == true)
 		ft_print_por_alig (flg, c, num);
-	//free (flg->f_str);
 }

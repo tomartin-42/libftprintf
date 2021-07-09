@@ -11,14 +11,13 @@ void	ft_init_flags (t_flags *flags)
 	flags->plus = false;
 	flags->bwidth = false;
 	flags->negative = false;
-	//flags->len = 0;
 	flags->width = 0;
 	flags->precision = 0;
 	flags->type = '0';
 	flags->f_str = NULL;
 }
 
-int		ft_getx_whidt (va_list *pf_arg, t_flags *flg)
+int	ft_getx_whidt (va_list *pf_arg, t_flags *flg)
 {
 	int	answ;
 
@@ -32,7 +31,7 @@ int		ft_getx_whidt (va_list *pf_arg, t_flags *flg)
 	return (answ);
 }
 
-int		ft_getx_precision (va_list *pf_arg, t_flags *flg)
+int	ft_getx_precision (va_list *pf_arg, t_flags *flg)
 {
 	int	answ;
 

@@ -14,10 +14,10 @@
 
 int	ft_printf (const char *pf_string, ...)
 {
-	va_list arg;
+	va_list	arg;
 	t_flags	flags;
 
-	flags.len = 0;			
+	flags.len = 0;
 	va_start (arg, pf_string);
 	ft_do_it (pf_string, &flags, &arg);
 	va_end (arg);
@@ -52,16 +52,16 @@ void	ft_procesing (const char *pf_string, t_flags *flags, va_list *pf_arg)
 	ft_get_flags (pf_string, flags, pf_arg);
 }
 
-void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
+void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 {
 	if (*pf_string == 'c')
 		ft_print_c (flags, pf_arg);
- 	else if (*pf_string == 's')
- 		ft_print_s (flags, pf_arg);
- 	else if (*pf_string == 'p')
+	else if (*pf_string == 's')
+		ft_print_s (flags, pf_arg);
+	else if (*pf_string == 'p')
 		ft_print_p (flags, pf_arg);
- 	else if (*pf_string == 'd' || *pf_string == 'i')
- 		ft_print_d (flags, pf_arg);
+	else if (*pf_string == 'd' || *pf_string == 'i')
+		ft_print_d (flags, pf_arg);
 	else if (*pf_string == 'u')
 		ft_print_u (flags, pf_arg);
 	else if (*pf_string == 'x')
@@ -72,7 +72,7 @@ void ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg)
 		ft_print_por (flags);
 }
 
-void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
+void	ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
 {
 	while (*pf_string)
 	{
@@ -83,7 +83,7 @@ void ft_do_it (const char *pf_string, t_flags *flags, va_list *arg)
 		}
 		else
 		{
-			write (1, pf_string, 1);	
+			write (1, pf_string, 1);
 			flags->len += 1;
 		}
 		pf_string++;

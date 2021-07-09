@@ -2,23 +2,23 @@
 
 static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 {
-		ft_make_string_zero (nc_width, flg, c);
-		ft_to_write (flg->f_str, nc_zero, flg);
+	ft_make_string_zero (nc_width, flg, c);
+	ft_to_write (flg->f_str, nc_zero, flg);
 }
 
 static void	ft_subprint_a (t_flags *flg, int nc_zero, int nc_width, char c)
 {
-		ft_to_write (flg->f_str, nc_zero, flg);
-		ft_make_string_zero (nc_width, flg, c);
+	ft_to_write (flg->f_str, nc_zero, flg);
+	ft_make_string_zero (nc_width, flg, c);
 }
 
-static void ft_print_s_unalig (t_flags *flg, char c)
+static void	ft_print_s_unalig (t_flags *flg, char c)
 {
-	int	    nc_zero;
-	int		nc_width;
+	int	nc_zero;
+	int	nc_width;
 
 	nc_width = 0;
-	if (flg->precision > ft_strlen (flg->f_str) || flg->point == false)	
+	if (flg->precision > ft_strlen (flg->f_str) || flg->point == false)
 		nc_zero = ft_strlen (flg->f_str);
 	else
 		nc_zero = flg->precision;
@@ -30,13 +30,13 @@ static void ft_print_s_unalig (t_flags *flg, char c)
 	ft_subprint_ua (flg, nc_zero, nc_width, c);
 }
 
-static void ft_print_s_alig (t_flags *flg, char c)
+static void	ft_print_s_alig (t_flags *flg, char c)
 {
-	int	    nc_zero;
-	int		nc_width;
+	int	nc_zero;
+	int	nc_width;
 
 	nc_width = 0;
-	if (flg->precision > ft_strlen (flg->f_str) || flg->point == false)	
+	if (flg->precision > ft_strlen (flg->f_str) || flg->point == false)
 		nc_zero = ft_strlen (flg->f_str);
 	else
 		nc_zero = flg->precision;
@@ -48,7 +48,7 @@ static void ft_print_s_alig (t_flags *flg, char c)
 	ft_subprint_a (flg, nc_zero, nc_width, c);
 }
 
-void ft_print_s (t_flags *flg, va_list *pf_arg)
+void	ft_print_s (t_flags *flg, va_list *pf_arg)
 {
 	char	c;
 

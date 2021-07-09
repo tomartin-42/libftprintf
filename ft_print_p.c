@@ -3,7 +3,8 @@
 static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 {
 	if (flg->zero == true)
-	{	if (flg->width > 0 && flg->point == false)
+	{	
+		if (flg->width > 0 && flg->point == false)
 			ft_make_string_zero (nc_width, flg, c);
 		else
 			ft_make_string_zero (nc_width, flg, c);
@@ -46,12 +47,12 @@ static void	ft_print_p_unalig (t_flags *flg, char c, LL num)
 {
 	int		nc_width;
 	int		nc_zero;
-	
+
 	nc_width = 0;
 	if (num == 0)
 		flg->f_str = ft_strdup ("0");
 	else
-	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+		ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
 		nc_zero = 0;
@@ -65,12 +66,12 @@ static void	ft_print_p_alig (t_flags *flg, char c, LL num)
 {
 	int						nc_width;
 	int						nc_zero;
-	
+
 	nc_width = 0;
 	if (num == 0)
 		flg->f_str = ft_strdup ("0");
 	else
-	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+		ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
 		nc_zero = 0;
@@ -94,5 +95,4 @@ void	ft_print_p (t_flags *flg, va_list *pf_arg)
 		ft_print_p_unalig (flg, c, num);
 	else if (flg->alig == true)
 		ft_print_p_alig (flg, c, num);
-	//free (flg->f_str);
 }
