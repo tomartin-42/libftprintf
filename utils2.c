@@ -5,6 +5,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 	char	*p;
+	char	*aux;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -22,7 +23,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[i] != '\0')
 		p[j++] = s2[i++];
 	p[j] = '\0';
-	return (p);
+	aux = p;
+	free (p);
+	return (aux);
 }
 
 char	*ft_stradd_char(char const *s1, char c2)
@@ -30,6 +33,7 @@ char	*ft_stradd_char(char const *s1, char c2)
 	int		i;
 	int		j;
 	char	*p;
+	char	*aux;
 
 	if (!s1 || !c2)
 		return (NULL);
@@ -46,7 +50,9 @@ char	*ft_stradd_char(char const *s1, char c2)
 	}
 		p[j++] = c2;
 	p[j] = '\0';
-	return (p);
+	aux = p;
+	free (p);
+	return (aux);
 }
 
 void ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg)
@@ -65,6 +71,7 @@ char	*ft_stradd_char_empy(char const *s1, char c2)
 	int		i;
 	int		j;
 	char	*p;
+	char	*aux;
 
 	if (!s1 || !c2)
 	s1 = ft_strdup ("");
@@ -81,5 +88,7 @@ char	*ft_stradd_char_empy(char const *s1, char c2)
 	}
 		p[j++] = c2;
 	p[j] = '\0';
-	return (p);
+	aux = p;
+	free (p);
+	return (aux);
 }

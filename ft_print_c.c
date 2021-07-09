@@ -23,5 +23,5 @@ void	ft_print_c (t_flags *flg, va_list *pf_arg)
 		ft_print_c_unalig (flg, c, num);
 	else if (flg->alig == true)
 		ft_print_c_alig (flg, c, num);
-	free (flg->f_str);
+	//free (flg->f_str);
 }

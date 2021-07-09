@@ -26,6 +26,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*p;
 	int		i;
+	char	*aux;
 
 	i = 0;
 	while (s[i])
@@ -40,7 +41,9 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	p[i] = '\0';
-	return (p);
+	aux = p;
+	free (p);
+	return (aux);
 }
 
 int	ft_isdigit(int c)

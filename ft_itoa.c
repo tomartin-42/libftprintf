@@ -23,6 +23,7 @@ static char	*ft_reverse (char *str)
 	int		i;
 	int		j;
 	char	box;
+	char	*aux;
 
 	i = 0;
 	j = 0;
@@ -39,7 +40,9 @@ static char	*ft_reverse (char *str)
 		j++;
 		i--;
 	}
-	return (str);
+	aux = str;
+	free (str);
+	return (aux);
 }
 
 char	*ft_itoa (int n)

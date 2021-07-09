@@ -86,5 +86,5 @@ void	ft_print_x (t_flags *flg, va_list *pf_arg)
 	if (num < 0)
 		flg->negative = true;
 	ft_print_x_alig (flg, c, num);
-	free (flg->f_str);
+	//free (flg->f_str);
 }
