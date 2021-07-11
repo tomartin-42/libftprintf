@@ -28,12 +28,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (aux);
 }
 
-char	*ft_stradd_char(char const *s1, char c2)
+//char	*ft_stradd_char(char const *s1, char c2)
+char	*ft_stradd_char(char *s1, char c2)
 {
 	int		i;
 	int		j;
 	char	*p;
-	char	*aux;
+	//char	*aux;
 
 	if (!s1 || !c2)
 		return (NULL);
@@ -50,9 +51,10 @@ char	*ft_stradd_char(char const *s1, char c2)
 	}
 		p[j++] = c2;
 	p[j] = '\0';
-	aux = p;
-	free (p);
-	return (aux);
+	//aux = p;
+	//free (p);
+	free (s1);
+	return (p);
 }
 
 void ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg)
