@@ -15,13 +15,13 @@ static void	ft_subprint_ua (t_flags *flg, int nc_zero, int nc_width, char c)
 			ft_subprint_ext (flg, nc_width);
 		else
 		{
-		ft_make_string_zero (nc_width, flg, c);
-		ft_to_write (flg->f_str, 1, flg);
-		ft_make_string_zero (nc_zero, flg, '0');
-		ft_to_write (flg->f_str + 1, ft_strlen (flg->f_str) - 1, flg);
+			ft_make_string_zero (nc_width, flg, c);
+			ft_to_write (flg->f_str, 1, flg);
+			ft_make_string_zero (nc_zero, flg, '0');
+			ft_to_write (flg->f_str + 1, ft_strlen (flg->f_str) - 1, flg);
 		}
 	}
-	else 
+	else
 	{
 		if (flg->zero == true && flg->point == false)
 			c = '0';
@@ -55,7 +55,7 @@ static void	ft_print_xu_alig (t_flags *flg, char c, LL num)
 
 	nc_width = 0;
 	if (num == 0 && flg->point == true)
-	;
+		;
 	else
 		ft_dec_to_hex (num, "0123456789ABCDEF", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
@@ -68,7 +68,7 @@ static void	ft_print_xu_alig (t_flags *flg, char c, LL num)
 		nc_zero = 0;
 	nc_width = flg->width - ft_strlen (flg->f_str) - nc_zero;
 	if (nc_width < 0)
-		nc_width = 0;	
+		nc_width = 0;
 	if (flg->alig == false)
 		ft_subprint_ua (flg, nc_zero, nc_width, c);
 	else if (flg->alig == true)

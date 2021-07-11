@@ -49,7 +49,7 @@ static void	ft_print_p_unalig (t_flags *flg, char c, LL num)
 	int		nc_zero;
 
 	nc_width = 0;
-		ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
 		nc_zero = 0;
@@ -65,7 +65,7 @@ static void	ft_print_p_alig (t_flags *flg, char c, LL num)
 	int						nc_zero;
 
 	nc_width = 0;
-		ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
+	ft_dec_to_hex (num, "0123456789abcdef", 16, flg);
 	nc_zero = flg->precision - ft_strlen (flg->f_str);
 	if (nc_zero < 0)
 		nc_zero = 0;

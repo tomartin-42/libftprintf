@@ -47,7 +47,7 @@ char	*ft_itoa (long int n)
 	char	*a;
 	int		i;
 	long	ln;
-	
+
 	if (n == 0)
 		return (ft_strdup_free("0", 0));
 	ln = n;

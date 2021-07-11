@@ -93,8 +93,7 @@ int	ft_get_prec (const char *string, int *off, va_list *pf_arg, t_flags *flg)
 		if (*string == '*')
 		{
 			*off += 1;
-			answ = ft_getx_precision (pf_arg, flg);
-			return (answ);
+			return (ft_getx_precision (pf_arg, flg));
 		}
 		s_precision = ft_stradd_char_empy (s_precision, *string);
 		string++;
