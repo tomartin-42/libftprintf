@@ -84,4 +84,5 @@ void	ft_print_xu (t_flags *flg, va_list *pf_arg)
 	//flg->f_str = ft_strdup ("");
 	num = va_arg (*pf_arg, unsigned int);
 	ft_print_xu_alig (flg, c, num);
+	free (flg->f_str);
 }

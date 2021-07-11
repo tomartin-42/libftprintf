@@ -41,7 +41,7 @@ typedef struct s_flag{
 # define LL unsigned long long int
 # define CC const char
 
-void	ft_do_it (const char *pf_string, t_flags	*flags, va_list *arg);
+void	ft_do_it (const char *pf_string, t_flags *flags, va_list *arg);
 ssize_t	ft_strlen (const char *str);
 int		ft_printf (const char *strg, ...);
 void	ft_init_flags (t_flags *flags);
