@@ -66,15 +66,18 @@ void ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg)
 		flg->f_str = ft_stradd_char_empy(flg->f_str, code[num]);
 }
 
-char	*ft_stradd_char_empy(char const *s1, char c2)
+char	*ft_stradd_char_empy(char *s1, char c2)
 {
 	int		i;
 	int		j;
 	char	*p;
-	char	*aux;
+	//char	*aux;
 
-	if (!s1 || !c2)
-	s1 = ft_strdup ("");
+	if (!s1)
+	{	
+		s1 = malloc (1);
+		*s1 = '\0';
+	}
 	i = ft_strlen(s1) + 1;
 	p = malloc(i + 1);
 	if (!p)
@@ -88,7 +91,7 @@ char	*ft_stradd_char_empy(char const *s1, char c2)
 	}
 		p[j++] = c2;
 	p[j] = '\0';
-	aux = p;
-	free (p);
-	return (aux);
+	//aux = p;
+	free (s1);
+	return (p);
 }
