@@ -82,7 +82,8 @@ void	ft_print_d (t_flags *flg, va_list *pf_arg)
 
 	c = ' ';
 	//flg->f_str = '\0';
-	flg->f_str = ft_strdup ("");
+	//flg->f_str = ft_strdup ("");
+	free (flg->f_str);
 	num = va_arg (*pf_arg, long int);
 	if (num < 0)
 		flg->negative = true;
