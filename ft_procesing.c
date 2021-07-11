@@ -69,7 +69,7 @@ int	ft_get_whidt (const char *string, int *off, va_list *pf_arg, t_flags *flg)
 		*off += 1;
 	}
 	answ = ft_atoi (s_whidt);
-	//free (s_whidt);
+	free (s_whidt);
 	return (answ);
 }
 
@@ -96,6 +96,6 @@ int	ft_get_prec (const char *string, int *off, va_list *pf_arg, t_flags *flg)
 		*off += 1;
 	}
 	answ = ft_atoi (s_precision);
-	//free (s_precision);
+	free (s_precision);
 	return (answ);
 }

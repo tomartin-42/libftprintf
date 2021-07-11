@@ -53,6 +53,35 @@ char	*ft_strdup(char *s)
 	return (p);
 }
 
+
+char	*ft_strdup_free(char *s)
+{
+	char	*p;
+	int		i;
+	//char	*aux;
+
+	i = 0;
+	if (!s)
+	{
+		s = malloc (1);
+		*s = '\0';
+	}
+	while (s[i])
+		i++;
+	p = (char *)malloc (i + 1);
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	free (s);
+	return (p);
+}
+
 int	ft_isdigit(int c)
 {
 	int	resp;
@@ -62,6 +91,7 @@ int	ft_isdigit(int c)
 		resp = 0;
 	return (resp);
 }
+
 
 int	ft_atoi(const char *str)
 {
