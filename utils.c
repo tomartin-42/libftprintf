@@ -28,7 +28,6 @@ char	*ft_strdup(char *s)
 {
 	char	*p;
 	int		i;
-	//char	*aux;
 
 	i = 0;
 	if (!s)
@@ -56,7 +55,6 @@ char	*ft_strdup_free(char *s, int f)
 {
 	char	*p;
 	int		i;
-	//char	*aux;
 
 	i = 0;
 	if (!s)

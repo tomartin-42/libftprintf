@@ -100,12 +100,13 @@ printf ("123456789012345678901234567890\n");
 	char	*u = "-0";
 
 	
-	//printf(" %*.s %.1s \n", 10, "123", "4567");
-	//printf("Simple input test\n");
-	//ft_printf(" %*.s \n", 10, "123");
-	// ft_printf("Simple input test\n");
-	// printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j); //T2
-	// ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j); //T2
-	// printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d);
-	// ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d); //T3
+	printf(" %*.s %.1s \n", 10, "123", "4567");
+	ft_printf(" %*.s %.1s \n", 10, "123", "4567");
+	printf("Simple input test\n");
+	ft_printf("Simple input test\n");
+	ft_printf("Simple input test\n");
+	printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j); //T2
+	ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X\n", i, j, k, l, m, n, c, c, j, j, j); //T2
+	printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d);
+	ft_printf("%0i, %0d, %0d, %0d, %0d, %0d, %0d, %0d\n", i, j, k, l, m, c, e, d); //T3
 }

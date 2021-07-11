@@ -59,9 +59,6 @@ char	*ft_itoa (long int n);
 
 int		ft_isdigit (int c);
 int		ft_atoi (const char *str);
-char	*ft_strjoin (char const *s1, char const *s2);
-char	*ft_stradd_char (char *s1, char c2);
-//char	*ft_stradd_char (char const *s1, char c2);
 char	*ft_stradd_char_empy(char *s1, char c2);
 void	ft_write_type (const char *pf_string, t_flags *flags, va_list *pf_arg);
 void	ft_dec_to_hex(LL num, char *code, LL base, t_flags *flg);
@@ -79,7 +76,4 @@ void	ft_to_write (char *to_print, int leng, t_flags *flags);
 
 int		ft_skip (const char *pf_string);
 
-// BORRAR ---------------------------
-void	imprimeflags (t_flags *flags);
-//BORRAR -----------------------------
 #endif
