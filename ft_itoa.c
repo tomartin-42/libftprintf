@@ -23,7 +23,6 @@ static char	*ft_reverse (char *str)
 	int		i;
 	int		j;
 	char	box;
-	char	*aux;
 
 	i = 0;
 	j = 0;
@@ -40,9 +39,7 @@ static char	*ft_reverse (char *str)
 		j++;
 		i--;
 	}
-	aux = str;
-	free (str);
-	return (aux);
+	return (str);
 }
 
 char	*ft_itoa (long int n)
@@ -52,7 +49,7 @@ char	*ft_itoa (long int n)
 	long	ln;
 	
 	if (n == 0)
-		return (ft_strdup("0"));
+		return (ft_strdup_free("0", 0));
 	ln = n;
 	a = malloc (ft_lenitoa(ln) + 1);
 	if (!a)

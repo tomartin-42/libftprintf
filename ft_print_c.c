@@ -17,6 +17,7 @@ void	ft_print_c (t_flags *flg, va_list *pf_arg)
 	char			c;
 	unsigned int	num;
 
+	//imprimeflags (flg);
 	num = va_arg (*pf_arg, unsigned int);
 	c = ' ';
 	if (flg->alig == false)

@@ -51,14 +51,17 @@ static void	ft_print_s_alig (t_flags *flg, char c)
 void	ft_print_s (t_flags *flg, va_list *pf_arg)
 {
 	char	c;
+	char	*aux;
 
 	c = ' ';
-	flg->f_str = va_arg (*pf_arg, char *);
-	if (flg->f_str == NULL)
-		flg->f_str = "(null)\0";
-		//flg->f_str = ft_strdup ("(null)");
+	aux = va_arg (*pf_arg, char *);
+	if (aux == NULL)
+		flg->f_str = ft_strdup ("(null)");
+	else
+		flg->f_str = ft_strdup (aux);
 	if (flg->alig == false)
 		ft_print_s_unalig (flg, c);
 	else if (flg->alig == true)
 		ft_print_s_alig (flg, c);
+	free(flg->f_str);
 }

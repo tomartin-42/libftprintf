@@ -48,13 +48,11 @@ char	*ft_strdup(char *s)
 		i++;
 	}
 	p[i] = '\0';
-	//aux = p;
-	//free (s);
 	return (p);
 }
 
 
-char	*ft_strdup_free(char *s)
+char	*ft_strdup_free(char *s, int f)
 {
 	char	*p;
 	int		i;
@@ -78,7 +76,8 @@ char	*ft_strdup_free(char *s)
 		i++;
 	}
 	p[i] = '\0';
-	free (s);
+	if (f == 1)
+		free (s);
 	return (p);
 }
 

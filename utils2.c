@@ -53,7 +53,7 @@ char	*ft_stradd_char(char *s1, char c2)
 	p[j] = '\0';
 	//aux = p;
 	//free (p);
-	free (s1);
+	//free (s1);
 	return (p);
 }
 
@@ -73,7 +73,6 @@ char	*ft_stradd_char_empy(char *s1, char c2)
 	int		i;
 	int		j;
 	char	*p;
-	//char	*aux;
 
 	if (!s1)
 	{	
@@ -91,9 +90,8 @@ char	*ft_stradd_char_empy(char *s1, char c2)
 		p[j] = s1[j];
 		j++;
 	}
-		p[j++] = c2;
+	p[j++] = c2;
 	p[j] = '\0';
-	//aux = p;
 	free (s1);
 	return (p);
 }

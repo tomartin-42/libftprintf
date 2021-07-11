@@ -50,7 +50,7 @@ int		ft_proces_flags (const char *str, t_flags *flg, va_list *pf_arg);
 void	ft_get_flags (const char *string, t_flags *flags, va_list *pf_arg);
 char	*ft_strchr (const char *s, int c);
 char	*ft_strdup (char *s);
-char	*ft_strdup_free(char *s);
+char	*ft_strdup_free(char *s, int f);
 int		ft_get_whidt (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_get_prec (CC *string, int *offset, va_list *pf_arg, t_flags *flg);
 int		ft_getx_whidt (va_list *pf_arg, t_flags *flg);
