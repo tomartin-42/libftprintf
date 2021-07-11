@@ -24,13 +24,18 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(char *s)
 {
 	char	*p;
 	int		i;
-	char	*aux;
+	//char	*aux;
 
 	i = 0;
+	if (!s)
+	{
+		s = malloc (1);
+		*s = '\0';
+	}
 	while (s[i])
 		i++;
 	p = (char *)malloc (i + 1);
@@ -43,9 +48,9 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	p[i] = '\0';
-	aux = p;
-	free (p);
-	return (aux);
+	//aux = p;
+	//free (s);
+	return (p);
 }
 
 int	ft_isdigit(int c)

@@ -55,7 +55,8 @@ void	ft_print_s (t_flags *flg, va_list *pf_arg)
 	c = ' ';
 	flg->f_str = va_arg (*pf_arg, char *);
 	if (flg->f_str == NULL)
-		flg->f_str = ft_strdup ("(null)");
+		flg->f_str = "(null)\0";
+		//flg->f_str = ft_strdup ("(null)");
 	if (flg->alig == false)
 		ft_print_s_unalig (flg, c);
 	else if (flg->alig == true)

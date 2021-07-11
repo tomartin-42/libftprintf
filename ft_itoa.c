@@ -50,9 +50,12 @@ char	*ft_itoa (long int n)
 	char	*a;
 	int		i;
 	long	ln;
+	char	*c;
 
+	c = "0\0";
 	if (n == 0)
-		return (ft_strdup("0"));
+		//return (ft_strdup("0"));
+		return (c);
 	ln = n;
 	a = malloc (ft_lenitoa(ln) + 1);
 	if (!a)
