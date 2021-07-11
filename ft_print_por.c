@@ -2,14 +2,20 @@
 
 static void	ft_print_por_unalig (t_flags *flg, char c, char num)
 {	
+	char	*p;
+
+	p = &num;
 	ft_make_string_zero (flg->width - 1, flg, c);
-	ft_to_write (&num, 1, flg);
+	ft_to_write (p, 1, flg);
 }
 
 static void	ft_print_por_alig (t_flags *flg, char c, char num)
 {
+	char	*p;
+
+	p = &num;
 	c = ' ';
-	ft_to_write (&num, 1, flg);
+	ft_to_write (p, 1, flg);
 	ft_make_string_zero (flg->width - 1, flg, c);
 }
 

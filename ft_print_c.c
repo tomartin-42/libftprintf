@@ -2,13 +2,19 @@
 
 static void	ft_print_c_unalig (t_flags *flg, char c, char num)
 {	
+	char	*p;
+
+	p = &num;
 	ft_make_string_zero (flg->width - 1, flg, c);
-	ft_to_write (&num, 1, flg);
+	ft_to_write (p, 1, flg);
 }
 
 static void	ft_print_c_alig (t_flags *flg, char c, char num)
 {
-	ft_to_write (&num, 1, flg);
+	char	*p;
+
+	p = &num;
+	ft_to_write (p, 1, flg);
 	ft_make_string_zero (flg->width - 1, flg, c);
 }
 
