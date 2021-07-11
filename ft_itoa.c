@@ -50,8 +50,6 @@ char	*ft_itoa (long int n)
 	char	*a;
 	int		i;
 	long	ln;
-	char	*c;
-
 	
 	if (n == 0)
 		return (ft_strdup("0"));
