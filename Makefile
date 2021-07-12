@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 CFLAGS := -Wall -Wextra -Werror
 
-CC := cc
+CC := gcc
 
 SRC = ft_init_flag.c \
 				ft_itoa.c \
@@ -20,7 +20,25 @@ SRC = ft_init_flag.c \
 				utils.c \
 				utils2.c \
 
+BSRC = ./bonus/ft_init_flag_bonus.c \
+				./bonus/ft_itoa_bonus.c \
+				./bonus/ft_print_c_bonus.c \
+				./bonus/ft_print_d_bonus.c \
+				./bonus/ft_print_p_bonus.c \
+				./bonus/ft_print_por_bonus.c \
+				./bonus/ft_print_s_bonus.c \
+				./bonus/ft_print_u_bonus.c \
+				./bonus/ft_print_x_bonus.c \
+				./bonus/ft_print_xu_bonus.c \
+				./bonus/ft_printf_bonus.c \
+				./bonus/ft_procesing_bonus.c \
+				./bonus/ft_writes_bonus.c \
+				./bonus/utils_bonus.c \
+				./bonus/utils2_bonus.c \
+
 OBJ = $(SRC:.c=.o)
+
+BOBJ = $(BSRC:.c=.o)
 
 all: $(NAME)
 
@@ -30,8 +48,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $?
 
+bonus: $(BOBJ)
+	ar rc $(NAME) $?
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)
