@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <unistd.h>
-# include <stddef.h>
 # include <stdlib.h>
 # include <stdbool.h>
 # include <limits.h>
@@ -32,9 +31,6 @@ typedef struct s_flag{
 	bool	alig;
 	bool	zero;
 	bool	point;
-	bool	pad;
-	bool	space;
-	bool	plus;
 	bool	negative;
 }	t_flags;
 
