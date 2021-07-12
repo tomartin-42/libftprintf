@@ -31,9 +31,9 @@ typedef struct s_flag{
 	bool	alig;
 	bool	zero;
 	bool	point;
-	bool	pad;
-	bool	space;
-	bool	plus;
+	//bool	pad;
+	//bool	space;
+	//bool	plus;
 	bool	negative;
 }	t_flags;
 
