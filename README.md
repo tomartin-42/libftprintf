@@ -1,4 +1,4 @@
-My versio of printf function.
+My version of printf function.
 
 I made this proyect whitd old subjet specification buy the new subject is verry more easy. 
 
