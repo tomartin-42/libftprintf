@@ -1,6 +1,6 @@
 # ft_printf
 
-My version of printf function 42 cursus.
+My version of printf function in 42 cursus.
 
 I made this proyect whitd old subjet specification buy the new subject is verry more easy. 
 
